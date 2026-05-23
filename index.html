@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>בודפשט 2026 · מסלול 5 ימים</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Heebo', 'system-ui', 'sans-serif'] },
+        colors: {
+          ink: { 950: '#0a0e14', 900: '#0f141c', 800: '#161c26', 700: '#1f2632', 600: '#2a313e' },
+          gold: { 400: '#f5c451', 500: '#e4a92a', 600: '#c08a17' },
+          emerald2: { 400: '#34d399', 500: '#10b981' },
+        },
+        boxShadow: {
+          glow: '0 0 0 1px rgba(245,196,81,.25), 0 10px 30px -10px rgba(245,196,81,.25)',
+          glowG: '0 0 0 1px rgba(52,211,153,.25), 0 10px 30px -10px rgba(52,211,153,.25)',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html, body { background: #0a0e14; }
+  body { font-family: 'Heebo', system-ui, sans-serif; }
+  ::-webkit-scrollbar { height: 8px; width: 8px; }
+  ::-webkit-scrollbar-thumb { background: #2a313e; border-radius: 4px; }
+  .glass { backdrop-filter: blur(14px); background: rgba(15,20,28,.7); border: 1px solid rgba(255,255,255,.06); }
+  .grad-gold { background: linear-gradient(135deg,#f5c451 0%,#c08a17 100%); }
+  .grad-em { background: linear-gradient(135deg,#34d399 0%,#059669 100%); }
+  .grad-hero {
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(245,196,81,.18), transparent 60%),
+      radial-gradient(900px 500px at 0% 10%, rgba(52,211,153,.12), transparent 60%),
+      linear-gradient(180deg,#0a0e14 0%, #0f141c 100%);
+  }
+  .timeline-rail { background: linear-gradient(180deg, rgba(245,196,81,.35), rgba(52,211,153,.25), rgba(255,255,255,.05)); }
+  .card-hover { transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
+  .card-hover:hover { transform: translateY(-4px); border-color: rgba(245,196,81,.35); }
+  .leaflet-container { background: #0f141c; border-radius: 1rem; }
+  .leaflet-tile { filter: brightness(.6) saturate(.9) hue-rotate(-10deg); }
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: #161c26; color: #f5f5f5; border: 1px solid rgba(245,196,81,.25); }
+  .leaflet-popup-content { font-family: 'Heebo', sans-serif; direction: rtl; }
+  .tab-active { background: linear-gradient(135deg, rgba(245,196,81,.18), rgba(245,196,81,.05)); color: #f5c451; border-color: rgba(245,196,81,.45) !important; box-shadow: 0 8px 24px -12px rgba(245,196,81,.5); }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .chev { transform: rotate(180deg); }
+  .chev { transition: transform .25s ease; }
+  .fade-in { animation: fadeIn .5s ease both; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  .pulse-dot::after {
+    content:''; position:absolute; inset:-4px; border-radius:9999px; border:2px solid rgba(245,196,81,.6);
+    animation: ping 1.8s cubic-bezier(0,0,.2,1) infinite;
+  }
+  @keyframes ping { 0% { transform: scale(1); opacity: .8; } 80%,100% { transform: scale(1.8); opacity: 0; } }
+</style>
+</head>
+<body class="text-slate-100 antialiased">
+
+<!-- HEADER / HERO -->
+<header class="grad-hero relative overflow-hidden">
+  <div class="absolute inset-0 opacity-20 pointer-events-none"
+       style="background-image: url('https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; mix-blend-mode: luminosity;"></div>
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8 pt-10 pb-8">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 rounded-xl grad-gold flex items-center justify-center text-ink-950 font-black text-lg">B</div>
+      <span class="text-sm tracking-widest text-slate-400 uppercase">Budapest · 2026</span>
+    </div>
+    <h1 class="text-4xl md:text-6xl font-black leading-tight">
+      בודפשט <span class="text-transparent bg-clip-text grad-gold" style="-webkit-background-clip:text;background-clip:text;">5 ימים</span><br/>
+      כדורגל, סטייקים ולילה לבן
+    </h1>
+    <p class="mt-4 text-slate-300 max-w-2xl text-base md:text-lg">
+      מסלול דינמי לחמישה ימים בלב הרובע השביעי — מהגמר של ליגת האלופות באצטדיון פושקש, דרך מסעדות יוקרה ועד ברי החורבות האייקוניים.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-3 text-sm">
+      <span class="glass px-3 py-1.5 rounded-full">📍 בסיס: Nyár utca, רובע VII</span>
+      <span class="glass px-3 py-1.5 rounded-full">✈️ 29 במאי – 2 ביוני</span>
+      <span class="glass px-3 py-1.5 rounded-full">⚽ גמר ה־UCL</span>
+      <span class="glass px-3 py-1.5 rounded-full">🥩 3 הזמנות סטייק</span>
+    </div>
+  </div>
+</header>
+
+<!-- STICKY TAB BAR -->
+<nav id="tabBar" class="sticky top-0 z-40 glass border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-3 md:px-8">
+    <div id="tabs" class="flex gap-2 overflow-x-auto py-3 no-scrollbar"></div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="max-w-7xl mx-auto px-4 md:px-8 py-8">
+  <div class="grid lg:grid-cols-[1fr_420px] gap-6">
+
+    <!-- Timeline column -->
+    <section id="dayContent" class="min-w-0"></section>
+
+    <!-- Map column (sticky on desktop) -->
+    <aside class="lg:sticky lg:top-24 h-fit">
+      <div class="glass rounded-2xl p-4">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="font-bold text-lg">🗺️ מפת היום</h3>
+          <span id="mapDayLabel" class="text-xs text-gold-400 font-semibold"></span>
+        </div>
+        <div id="map" class="h-[420px] rounded-xl"></div>
+        <div id="mapLegend" class="mt-3 space-y-1 text-sm text-slate-300 max-h-48 overflow-y-auto"></div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="border-t border-white/5 mt-12">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-8 text-center text-slate-500 text-sm">
+    מסלול אישי · בודפשט 2026 · יצא לדרך 🚀
+  </div>
+</footer>
+
+<script>
+/* ============================================
+   ITINERARY DATA
+============================================ */
+const BASE = { name: 'הדירה — Nyár utca', lat: 47.4979, lng: 19.0608 };
+
+const DAYS = [
+  {
+    id: 'fri', label: 'שישי', date: '29.5', sub: 'הגעה · פושקש · סטייק',
+    center: [47.499, 19.075], zoom: 13,
+    activities: [
+      { time:'08:00', title:'נחיתה בנמל התעופה BUD', desc:'איסוף ב־Bolt ישירות לדירה ב־Nyár utca. הכל נוח, בלי הפתעות.', img:'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=80', icon:'✈️', loc:{lat:47.4298,lng:19.2611,name:'BUD Airport'} },
+      { time:'10:00', title:'ארוחת בוקר ב־Dorado Café', desc:'בית קפה שכונתי קטן ומלא אופי — קפה מצוין ובייקרי טרי לפתיחת היום.', img:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80', icon:'☕', loc:{lat:47.5006,lng:19.0631,name:'Dorado Café'}, alt:{name:'Stika Budapest', desc:'בייגלה ניו־יורקי מעולה במרחק 2 דקות הליכה.'} },
+      { time:'13:15', title:'צהריים ב־Bamba Marha Burger Bar', desc:'המבורגרים כשרים־בסטייל בכיכר Deák Ferenc — מנת פתיחה אגדית לפני המשחק.', img:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80', icon:'🍔', loc:{lat:47.4979,lng:19.0547,name:'Bamba Marha · Deák tér'}, alt:{name:"Simon's Burger", desc:'אופציה קלאסית להמבורגר במרחק קצר.'} },
+      { time:'15:30', title:'משחק אגדות ליגת האלופות · אצטדיון פושקש', desc:'מטרו M2 ישיר עד Puskás Aréna. מתחממים לקראת הגמר עם משחק האגדות.', img:'https://images.unsplash.com/photo-1518604666860-9ed391f76460?auto=format&fit=crop&w=900&q=80', icon:'⚽', loc:{lat:47.5031,lng:19.0975,name:'Puskás Aréna'} },
+      { time:'20:00', title:'ארוחת ערב · Hot Stone Steakhouse', desc:'הסטייק המיתולוגי על אבן לוהטת — צורבים בעצמכם על השולחן. חוויה חובה.', img:'https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=900&q=80', icon:'🥩', reserved:true, loc:{lat:47.4956,lng:19.0570,name:'Hot Stone Steakhouse'} },
+      { time:'22:30', title:'Tropicana Casino', desc:'הליכה רגועה מהמסעדה אל הקזינו. רולטה, בלאקג׳ק וכוסית לסיום.', img:'https://images.unsplash.com/photo-1606167668584-78701c57f13d?auto=format&fit=crop&w=900&q=80', icon:'🎰', loc:{lat:47.4978,lng:19.0530,name:'Tropicana Casino'} },
+    ]
+  },
+  {
+    id: 'sat', label: 'שבת', date: '30.5', sub: 'יום הגמר · UCL FINAL',
+    center: [47.497, 19.055], zoom: 14,
+    activities: [
+      { time:'11:00', title:'Váci utca והשוק המרכזי', desc:'טיול בולט ברחוב הראשי וסיור בשוק Nagyvásárcsarnok — תבלינים, פפריקה ופלפלים חריפים.', img:'https://images.unsplash.com/photo-1551867633-194f125bddfa?auto=format&fit=crop&w=900&q=80', icon:'🛍️', loc:{lat:47.4869,lng:19.0586,name:'Central Market Hall'} },
+      { time:'14:00', title:'צהריים · Mama Goulash / Gettó Gulyás', desc:'הגולאש ההונגרי האותנטי — מרק עשיר עם בשר ופפריקה, בדיוק לפני יום ארוך.', img:'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80', icon:'🍲', loc:{lat:47.4978,lng:19.0617,name:'Gettó Gulyás'}, alt:{name:'Frici Papa / Kőleves', desc:'מטבח הונגרי ביתי במחירים נוחים — שתי אופציות מצוינות בסביבה.'} },
+      { time:'16:30', title:'צעידה ל־Fan Zone · Szabadság tér', desc:'אווירת חגיגה בכיכר החופש (Plaza de la Libertad) לקראת המשחק הגדול.', img:'https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&w=900&q=80', icon:'🎉', loc:{lat:47.5051,lng:19.0505,name:'Szabadság tér Fan Zone'} },
+      { time:'18:00', title:'⚽ גמר ליגת האלופות · מסכי ענק', desc:'הרגע שחיכינו לו. אלפי אוהדים, מסכי ענק וצרחות גול שמרעידות את הכיכר.', img:'https://images.unsplash.com/photo-1522778034537-20a2486be803?auto=format&fit=crop&w=900&q=80', icon:'🏆', highlight:true, loc:{lat:47.5051,lng:19.0505,name:'UCL FINAL · Fan Zone'} },
+      { time:'21:00', title:'לילה בברי החורבות', desc:'Szimpla Kert ו־Gozsdu Udvar — הברים האייקוניים של בודפשט. מוזיקה, אורות וקירות מלאי גרפיטי.', img:'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=900&q=80', icon:'🍻', loc:{lat:47.4974,lng:19.0628,name:'Szimpla Kert'} },
+      { time:'00:30', title:'נשנוש לילה · Zing Burger', desc:'המבורגר מהיר ומעולה ברחוב Király — סגירה מושלמת ללילה.', img:'https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=900&q=80', icon:'🍔', loc:{lat:47.4990,lng:19.0640,name:'Zing Burger · Király u.'}, alt:{name:'מי שיש כוח — Karavan Street Food', desc:'דוכני סטריט פוד פתוחים עד מאוחר ממש ליד.'} },
+    ]
+  },
+  {
+    id: 'sun', label: 'ראשון', date: '31.5', sub: 'יום גמיש · בחירה',
+    center: [47.500, 19.060], zoom: 13, interactive:true,
+    activities: [
+      { time:'10:30', title:'בראנץ׳ ב־Cirkusz', desc:'בית הקפה הכי טרנדי בעיר — חביתות, פנקייקים וקפה ברמה גבוהה.', img:'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=80', icon:'🥞', loc:{lat:47.4992,lng:19.0610,name:'Cirkusz Café'}, alt:{name:'Ramazuri Bistronomy', desc:'אופציה מצוינת לבראנץ׳ בסביבה — אווירה צעירה ותפריט עשיר.'} },
+      // afternoon paths handled below
+      { time:'20:30', title:'ארוחת ערב · Hot Stone Steakhouse', desc:'סבב שני באבן הלוהטת — כי פעם אחת זה לא מספיק.', img:'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=80', icon:'🥩', reserved:true, loc:{lat:47.4956,lng:19.0570,name:'Hot Stone Steakhouse'} },
+      { time:'23:00', title:'אופציונלי · Las Vegas Casino Corvin', desc:'סיבוב לילי בקזינו ה־Corvin — אווירה מודרנית, שולחנות חמים.', img:'https://images.unsplash.com/photo-1596731498067-8e57f0dc5e0d?auto=format&fit=crop&w=900&q=80', icon:'🎲', optional:true, loc:{lat:47.4865,lng:19.0731,name:'Las Vegas Casino Corvin'} },
+    ],
+    paths: {
+      A: { label:'מסלול A · המשך טיול', icon:'🏰', items: [
+        { time:'11:45', title:'אוטובוס 16 לארמון בודה', desc:'נסיעה נופית במעלה הגבעה אל הארמון המלכותי המרהיב.', img:'https://images.unsplash.com/photo-1551867633-194f125bddfa?auto=format&fit=crop&w=900&q=80', icon:'🚌', loc:{lat:47.4961,lng:19.0397,name:'Buda Castle'} },
+        { time:'13:30', title:"מצודת הדייגים · Fisherman's Bastion", desc:'נקודת התצפית האייקונית עם הצריחים הלבנים והנוף לדנובה ולפרלמנט.', img:'https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=900&q=80', icon:'🏰', loc:{lat:47.5020,lng:19.0344,name:"Fisherman's Bastion"} },
+        { time:'15:30', title:'ארוחה ב־Ramazuri Bistronomy', desc:'מטבח מודרני בכיכר Klauzál — מקום מצוין לנוח אחרי הצעידה.', img:'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80', icon:'🍽️', loc:{lat:47.4990,lng:19.0613,name:'Ramazuri Bistronomy'} },
+      ]},
+      B: { label:'מסלול B · רוגע ומרחצאות', icon:'♨️', items: [
+        { time:'14:00', title:'Bolt למרחצאות Széchenyi', desc:'אחד המרחצאות המפורסמים בעולם — בריכות מים חמים, סאונה ושתיין רטוב.', img:'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=80', icon:'♨️', loc:{lat:47.5188,lng:19.0813,name:'Széchenyi Thermal Baths'} },
+        { time:'17:30', title:'חזרה לדירה לרענון', desc:'מקלחת קצרה ומנוחה לפני סבב הסטייק השני של החופשה.', img:'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=80', icon:'🛋️', loc:{lat:47.4979,lng:19.0608,name:'הדירה'} },
+      ]}
+    }
+  },
+  {
+    id: 'mon', label: 'שני', date: '1.6', sub: 'שופינג · פרידה',
+    center: [47.502, 19.075], zoom: 13,
+    activities: [
+      { time:'11:30', title:'שופינג ב־Arena Mall', desc:'Primark, New Yorker ועוד — מטרו M2 ישיר. זמן למלא את המזוודה.', img:'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80', icon:'🛒', loc:{lat:47.5024,lng:19.0992,name:'Arena Mall'}, alt:{name:'Okay Italia / Arena Food Court', desc:'אופציות לאוכל — פיצרייה איטלקית אותנטית או מתחם הפוד קורט של הקניון.'} },
+      { time:'15:00', title:'חזרה לדירה להוריד שקיות', desc:'הפסקה קצרה לפני ההליכה הנופית האחרונה לאורך הדנובה.', img:'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=900&q=80', icon:'🏠', loc:{lat:47.4979,lng:19.0608,name:'הדירה'} },
+      { time:'16:00', title:'הליכה נופית לאורך הדנובה', desc:'נעליים על שפת הדנובה (Shoes on the Danube Bank) והצצה לפרלמנט המואר.', img:'https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=900&q=80', icon:'🌉', loc:{lat:47.5022,lng:19.0455,name:'Shoes on the Danube'} },
+      { time:'19:30', title:'ארוחת פרידה · Beestro 14', desc:'סטייקים, יין טוב ואווירה אינטימית לסיום מושלם של החופשה.', img:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80', icon:'🍷', reserved:true, loc:{lat:47.5008,lng:19.0610,name:'Beestro 14'} },
+    ]
+  },
+  {
+    id: 'tue', label: 'שלישי', date: '2.6', sub: 'יציאה הביתה',
+    center: [47.470, 19.150], zoom: 11,
+    activities: [
+      { time:'06:30', title:'Bolt לנמל התעופה', desc:'יציאה מוקדמת מהדירה — ארוזים ומוכנים.', img:'https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=900&q=80', icon:'🚕', loc:{lat:47.4979,lng:19.0608,name:'הדירה'} },
+      { time:'09:10', title:'המראה הביתה ✈️', desc:'עד הפעם הבאה, בודפשט. Köszönöm!', img:'https://images.unsplash.com/photo-1569629743817-70d8db6c323b?auto=format&fit=crop&w=900&q=80', icon:'🛫', loc:{lat:47.4298,lng:19.2611,name:'BUD Airport'} },
+    ]
+  }
+];
+
+/* ============================================
+   RENDERING
+============================================ */
+const tabsEl = document.getElementById('tabs');
+const contentEl = document.getElementById('dayContent');
+const mapDayLabel = document.getElementById('mapDayLabel');
+const mapLegend = document.getElementById('mapLegend');
+
+let currentDayId = DAYS[0].id;
+let sundayPath = 'A';
+
+function renderTabs() {
+  tabsEl.innerHTML = DAYS.map(d => `
+    <button data-day="${d.id}"
+      class="tab-btn shrink-0 px-4 md:px-5 py-2.5 rounded-xl border border-white/10 text-sm md:text-base font-semibold whitespace-nowrap transition
+             ${d.id===currentDayId ? 'tab-active' : 'text-slate-300 hover:text-white hover:border-white/25'}">
+      <span class="block text-[11px] text-slate-400 font-normal">${d.date}</span>
+      <span>${d.label}</span>
+    </button>`).join('');
+  tabsEl.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentDayId = btn.dataset.day;
+      renderTabs();
+      renderDay();
+    });
+  });
+}
+
+function activityCard(a, idx) {
+  const reservedBadge = a.reserved ? `
+    <span class="absolute -top-2 -start-2 grad-em text-ink-950 text-xs font-black px-3 py-1 rounded-full shadow-glowG">
+      ✓ מוזמן
+    </span>` : '';
+  const optionalBadge = a.optional ? `
+    <span class="absolute top-3 start-3 bg-slate-700/80 text-slate-200 text-[11px] font-bold px-2 py-0.5 rounded-full">אופציונלי</span>` : '';
+  const highlightBadge = a.highlight ? `
+    <span class="absolute top-3 start-3 grad-gold text-ink-950 text-[11px] font-black px-2 py-0.5 rounded-full">⭐ אירוע השיא</span>` : '';
+  const alt = a.alt ? `
+    <details class="mt-3 group">
+      <summary class="flex items-center justify-between gap-2 text-sm text-gold-400 hover:text-gold-500 font-semibold py-2 px-3 rounded-lg bg-gold-500/5 border border-gold-500/20">
+        <span class="flex items-center gap-2">🔄 אפשרויות חלופיות בסביבה</span>
+        <svg class="chev w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.24 4.38a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"/></svg>
+      </summary>
+      <div class="mt-2 p-3 rounded-lg bg-ink-800/60 border border-white/5 text-sm text-slate-300">
+        <div class="font-bold text-slate-100">${a.alt.name}</div>
+        <p class="mt-1 text-slate-400">${a.alt.desc}</p>
+      </div>
+    </details>` : '';
+  const borderCls = a.reserved ? 'border-emerald2-500/40 shadow-glowG' : (a.highlight ? 'border-gold-500/40 shadow-glow' : 'border-white/5');
+  return `
+  <div class="fade-in relative card-hover bg-ink-800/60 rounded-2xl border ${borderCls} overflow-hidden">
+    ${reservedBadge}
+    <div class="grid sm:grid-cols-[180px_1fr]">
+      <div class="relative h-44 sm:h-full">
+        <img src="${a.img}" alt="" loading="lazy" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink-900/80 via-transparent to-transparent"></div>
+        ${optionalBadge}${highlightBadge}
+      </div>
+      <div class="p-4 md:p-5">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="text-2xl">${a.icon || '📍'}</span>
+          <span class="font-mono text-gold-400 font-bold text-lg">${a.time}</span>
+        </div>
+        <h3 class="text-xl font-extrabold mb-1">${a.title}</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">${a.desc}</p>
+        ${a.loc ? `<div class="mt-2 text-xs text-slate-500">📍 ${a.loc.name}</div>` : ''}
+        ${alt}
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderDay() {
+  const day = DAYS.find(d => d.id === currentDayId);
+  mapDayLabel.textContent = `${day.label} · ${day.date}`;
+
+  let html = `
+    <div class="mb-6 fade-in">
+      <div class="flex items-baseline gap-3 flex-wrap">
+        <h2 class="text-3xl md:text-4xl font-black">יום ${day.label}</h2>
+        <span class="text-gold-400 font-bold">${day.date}</span>
+      </div>
+      <p class="text-slate-400 mt-1">${day.sub}</p>
+    </div>`;
+
+  if (day.interactive) {
+    // Sunday: brunch + interactive choice + remainder
+    html += activityCard(day.activities[0]);
+    html += `
+      <div class="my-6 fade-in glass rounded-2xl p-5 border border-gold-500/20">
+        <div class="flex items-start gap-3 mb-4">
+          <div class="text-3xl">🤔</div>
+          <div>
+            <h3 class="text-xl font-extrabold">רוצים להירגע או להמשיך לטייל?</h3>
+            <p class="text-slate-400 text-sm mt-1">בחרו את אחר הצהריים שלכם — אפשר להחליף מתי שתרצו.</p>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-3">
+          <button data-path="A" class="path-btn p-4 rounded-xl border text-start transition ${sundayPath==='A' ? 'tab-active border-gold-500/60' : 'border-white/10 hover:border-gold-500/30 text-slate-300'}">
+            <div class="text-2xl mb-1">🏰</div>
+            <div class="font-bold">המשך טיול</div>
+            <div class="text-xs text-slate-400 mt-1">ארמון בודה ומצודת הדייגים</div>
+          </button>
+          <button data-path="B" class="path-btn p-4 rounded-xl border text-start transition ${sundayPath==='B' ? 'tab-active border-gold-500/60' : 'border-white/10 hover:border-gold-500/30 text-slate-300'}">
+            <div class="text-2xl mb-1">♨️</div>
+            <div class="font-bold">רוגע במרחצאות</div>
+            <div class="text-xs text-slate-400 mt-1">Széchenyi Thermal Baths</div>
+          </button>
+        </div>
+      </div>`;
+    const pathData = day.paths[sundayPath];
+    html += `<div class="mb-3 text-sm font-bold text-emerald2-400">${pathData.icon} נבחר: ${pathData.label}</div>`;
+    html += pathData.items.map(activityCard).join('');
+    // remainder
+    html += day.activities.slice(1).map(activityCard).join('');
+  } else {
+    html += day.activities.map(activityCard).join('');
+  }
+
+  contentEl.innerHTML = html;
+
+  if (day.interactive) {
+    contentEl.querySelectorAll('.path-btn').forEach(b => {
+      b.addEventListener('click', () => {
+        sundayPath = b.dataset.path;
+        renderDay();
+      });
+    });
+  }
+
+  renderMap();
+}
+
+/* ============================================
+   LEAFLET MAP
+============================================ */
+let map, markersLayer, routeLayer;
+
+function initMap() {
+  map = L.map('map', { zoomControl: true, attributionControl: false }).setView([47.498, 19.06], 13);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    maxZoom: 19,
+  }).addTo(map);
+  markersLayer = L.layerGroup().addTo(map);
+  routeLayer = L.layerGroup().addTo(map);
+}
+
+function getDayLocations() {
+  const day = DAYS.find(d => d.id === currentDayId);
+  let acts = [];
+  if (day.interactive) {
+    acts.push(day.activities[0]);
+    acts = acts.concat(day.paths[sundayPath].items);
+    acts = acts.concat(day.activities.slice(1));
+  } else {
+    acts = day.activities;
+  }
+  return acts.filter(a => a.loc).map((a,i) => ({ ...a.loc, time: a.time, title: a.title, reserved: a.reserved, idx: i+1 }));
+}
+
+function renderMap() {
+  if (!map) return;
+  markersLayer.clearLayers();
+  routeLayer.clearLayers();
+
+  const locs = getDayLocations();
+  const day = DAYS.find(d => d.id === currentDayId);
+
+  // base marker
+  const baseIcon = L.divIcon({
+    className: 'base-marker',
+    html: `<div style="position:relative;width:18px;height:18px;border-radius:9999px;background:#f5c451;border:3px solid #0a0e14;box-shadow:0 0 0 2px #f5c451;"></div>`,
+    iconSize:[18,18], iconAnchor:[9,9]
+  });
+  L.marker([BASE.lat, BASE.lng], { icon: baseIcon })
+    .addTo(markersLayer)
+    .bindPopup(`<b>🏠 ${BASE.name}</b><br/>בסיס הטיול`);
+
+  const latlngs = [];
+  locs.forEach((l, i) => {
+    const color = l.reserved ? '#34d399' : '#f5c451';
+    const icon = L.divIcon({
+      className: 'stop-marker',
+      html: `<div style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:9999px;background:${color};color:#0a0e14;font-weight:900;border:3px solid #0a0e14;box-shadow:0 4px 12px rgba(0,0,0,.5);font-family:Heebo,sans-serif;font-size:13px;">${i+1}</div>`,
+      iconSize:[30,30], iconAnchor:[15,15]
+    });
+    L.marker([l.lat, l.lng], { icon })
+      .addTo(markersLayer)
+      .bindPopup(`<div style="min-width:160px"><b>${i+1}. ${l.title}</b><br/><span style="color:#f5c451">${l.time}</span><br/><span style="color:#94a3b8;font-size:12px">${l.name}</span>${l.reserved?'<br/><span style="color:#34d399;font-weight:bold">✓ מוזמן</span>':''}</div>`);
+    latlngs.push([l.lat, l.lng]);
+  });
+
+  // route line
+  if (latlngs.length > 1) {
+    L.polyline(latlngs, { color: '#f5c451', weight: 3, opacity: 0.65, dashArray: '6 8' }).addTo(routeLayer);
+  }
+
+  // legend
+  mapLegend.innerHTML = locs.map((l,i) => `
+    <div class="flex items-center gap-2 py-1 border-b border-white/5 last:border-0">
+      <span class="inline-flex items-center justify-center w-6 h-6 rounded-full font-black text-xs ${l.reserved?'bg-emerald2-500 text-ink-950':'bg-gold-500 text-ink-950'}">${i+1}</span>
+      <span class="font-mono text-xs text-gold-400">${l.time}</span>
+      <span class="flex-1 truncate">${l.title}</span>
+      ${l.reserved ? '<span class="text-emerald2-400 text-xs">✓</span>' : ''}
+    </div>`).join('');
+
+  // fit
+  const bounds = L.latLngBounds([[BASE.lat, BASE.lng], ...latlngs]);
+  if (bounds.isValid()) {
+    map.flyToBounds(bounds.pad(0.25), { duration: 0.6 });
+  } else {
+    map.flyTo(day.center, day.zoom, { duration: 0.6 });
+  }
+}
+
+/* ============================================
+   BOOT
+============================================ */
+document.addEventListener('DOMContentLoaded', () => {
+  initMap();
+  renderTabs();
+  renderDay();
+});
+</script>
+</body>
+</html>
