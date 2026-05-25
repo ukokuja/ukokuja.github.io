@@ -130,6 +130,20 @@
       <div id="extrasMapsBtns" class="flex flex-wrap gap-2"></div>
     </div>
     <div id="userLocStatus" class="hidden mb-4 p-3 rounded-xl bg-emerald2-500/10 border border-emerald2-500/30 text-emerald2-300 text-sm font-semibold"></div>
+
+    <!-- Instagram recommendations -->
+    <div class="mb-10 p-5 rounded-2xl bg-gradient-to-br from-pink-500/10 via-fuchsia-500/5 to-transparent border border-pink-500/30">
+      <div class="flex items-center justify-between flex-wrap gap-3 mb-4">
+        <div>
+          <h3 class="text-2xl font-extrabold flex items-center gap-2">
+            <span class="text-pink-400">📸</span> המלצות מאינסטגרם
+          </h3>
+          <p class="text-slate-400 text-sm mt-0.5">רילסים שראיתי — שניים מסומנים כ־<span class="text-pink-300 font-bold">MUST</span>, השאר שווה לבדוק.</p>
+        </div>
+      </div>
+      <div id="igRecsContent" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+    </div>
+
     <div id="extrasContent" class="grid gap-8"></div>
   </section>
 </main>
@@ -156,6 +170,7 @@ const DAYS = [
     center: [47.499, 19.075], zoom: 13,
     activities: [
       { time:'10:00', title:'ארוחת בוקר ב־Dorado Café', desc:'בית קפה שכונתי קטן ומלא אופי — קפה מצוין ובייקרי טרי לפתיחת היום.', img:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80', icon:'☕', loc:{lat:47.5006,lng:19.0631,name:'Dorado Café'}, ig:'doradocafe', rating:4.6, reviews:920, alt:{name:'Stika Budapest', desc:'בייגלה ניו־יורקי מעולה במרחק 2 דקות הליכה.'}, transports:[{mode:'walk',mins:3,note:'מומלץ'},{mode:'bolt',mins:4}] },
+      { time:'אופציונלי', title:'📸 המלצת חובה מאינסטגרם', desc:'רילס שראיתי — מקום שווה לבדוק אם יש זמן בבוקר/צהריים. צפו ברילס למטה.', img:'https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=900&q=80', icon:'📸', optional:true, igMust:true, reel:'DVeiZ_miOZ_' },
       { time:'13:15', title:'צהריים ב־Bamba Marha Burger Bar', desc:'המבורגרים כשרים־בסטייל בכיכר Deák Ferenc — מנת פתיחה אגדית לפני המשחק.', img:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80', icon:'🍔', loc:{lat:47.4979,lng:19.0547,name:'Bamba Marha · Deák tér'}, ig:'bambamarha', web:'https://bambamarha.hu', rating:4.5, reviews:3800, alt:{name:"Simon's Burger", desc:'אופציה קלאסית להמבורגר במרחק קצר.'}, transports:[{mode:'walk',mins:10,note:'מומלץ'},{mode:'bolt',mins:6},{mode:'metro',mins:8,note:'M1/M2/M3'}] },
       { time:'15:30', title:'משחק אגדות ליגת האלופות · אצטדיון פושקש', desc:'מטרו M2 ישיר עד Puskás Aréna. מתחממים לקראת הגמר עם משחק האגדות.', img:'https://images.unsplash.com/photo-1518604666860-9ed391f76460?auto=format&fit=crop&w=900&q=80', icon:'⚽', loc:{lat:47.5031,lng:19.0975,name:'Puskás Aréna'}, ig:'puskasarena', web:'https://www.puskasarena.hu', rating:4.7, reviews:18500, transports:[{mode:'metro',mins:15,note:'M2 ישיר · מומלץ'},{mode:'bolt',mins:12},{mode:'bus',mins:25}] },
       { time:'20:00', title:'ארוחת ערב · Hot Stone Steakhouse', desc:'הסטייק המיתולוגי על אבן לוהטת — צורבים בעצמכם על השולחן. חוויה חובה.', img:'https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=900&q=80', icon:'🥩', reserved:true, loc:{lat:47.4956,lng:19.0570,name:'Hot Stone Steakhouse'}, ig:'hotstonesteakhouse', web:'https://hotstonesteakhouse.com', rating:4.7, reviews:5400, transports:[{mode:'metro',mins:18,note:'M2 חזרה'},{mode:'bolt',mins:15,note:'מומלץ'}] },
@@ -168,6 +183,7 @@ const DAYS = [
     center: [47.497, 19.055], zoom: 14,
     activities: [
       { time:'11:00', title:'Váci utca והשוק המרכזי', desc:'טיול בולט ברחוב הראשי וסיור בשוק Nagyvásárcsarnok — תבלינים, פפריקה ופלפלים חריפים.', img:'https://images.unsplash.com/photo-1551867633-194f125bddfa?auto=format&fit=crop&w=900&q=80', icon:'🛍️', loc:{lat:47.4869,lng:19.0586,name:'Central Market Hall'}, rating:4.6, reviews:54000, transports:[{mode:'walk',mins:18,note:'מומלץ'},{mode:'bolt',mins:8},{mode:'metro',mins:12,note:'M3'}] },
+      { time:'אופציונלי', title:'📸 המלצת חובה מאינסטגרם', desc:'רילס שני שמסומן MUST — שווה לשלב במהלך היום אם יש חלון זמן. צפו ברילס למטה.', img:'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80', icon:'📸', optional:true, igMust:true, reel:'DYAgzIMIU3x' },
       { time:'14:00', title:'צהריים · Mama Goulash / Gettó Gulyás', desc:'הגולאש ההונגרי האותנטי — מרק עשיר עם בשר ופפריקה, בדיוק לפני יום ארוך.', img:'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80', icon:'🍲', loc:{lat:47.4978,lng:19.0617,name:'Gettó Gulyás'}, ig:'gettogulyas', rating:4.5, reviews:6800, alt:{name:'Frici Papa / Kőleves', desc:'מטבח הונגרי ביתי במחירים נוחים — שתי אופציות מצוינות בסביבה.'}, transports:[{mode:'walk',mins:15,note:'מומלץ'},{mode:'bolt',mins:7}] },
       { time:'16:30', title:'צעידה ל־Fan Zone · Szabadság tér', desc:'אווירת חגיגה בכיכר החופש (Plaza de la Libertad) לקראת המשחק הגדול.', img:'https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&w=900&q=80', icon:'🎉', loc:{lat:47.5051,lng:19.0505,name:'Szabadság tér Fan Zone'}, rating:4.6, reviews:8200, transports:[{mode:'walk',mins:12,note:'מומלץ'},{mode:'bolt',mins:7}] },
       { time:'18:00', title:'⚽ גמר ליגת האלופות · מסכי ענק', desc:'הרגע שחיכינו לו. אלפי אוהדים, מסכי ענק וצרחות גול שמרעידות את הכיכר.', img:'https://images.unsplash.com/photo-1522778034537-20a2486be803?auto=format&fit=crop&w=900&q=80', icon:'🏆', highlight:true, loc:{lat:47.5051,lng:19.0505,name:'UCL FINAL · Fan Zone'}, transports:[{mode:'stay',mins:0,note:'נשארים בכיכר'}] },
@@ -181,6 +197,7 @@ const DAYS = [
     center: [47.500, 19.060], zoom: 13, interactive:true,
     activities: [
       { time:'10:30', title:'בראנץ׳ ב־Cirkusz', desc:'בית הקפה הכי טרנדי בעיר — חביתות, פנקייקים וקפה ברמה גבוהה.', img:'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=80', icon:'🥞', loc:{lat:47.4992,lng:19.0610,name:'Cirkusz Café'}, ig:'cirkuszcafe', rating:4.5, reviews:5100, alt:{name:'Ramazuri Bistronomy', desc:'אופציה מצוינת לבראנץ׳ בסביבה — אווירה צעירה ותפריט עשיר.'}, transports:[{mode:'walk',mins:4,note:'מומלץ'},{mode:'bolt',mins:5}] },
+      { time:'אופציונלי', title:'📸 המלצה מאינסטגרם', desc:'יום גמיש = הזדמנות לרילס הזה. שווה לבדוק אם יש זמן אחרי הצהריים.', img:'https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?auto=format&fit=crop&w=900&q=80', icon:'📸', optional:true, reel:'DXZeYv8DMvf' },
       // afternoon paths handled below
       { time:'20:30', title:'ארוחת ערב · Hot Stone Steakhouse', desc:'סבב שני באבן הלוהטת — כי פעם אחת זה לא מספיק.', img:'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=80', icon:'🥩', reserved:true, loc:{lat:47.4956,lng:19.0570,name:'Hot Stone Steakhouse'}, ig:'hotstonesteakhouse', web:'https://hotstonesteakhouse.com', rating:4.7, reviews:5400, transports:[{mode:'walk',mins:8,note:'מומלץ'},{mode:'bolt',mins:5}] },
       { time:'23:00', title:'אופציונלי · Las Vegas Casino Corvin', desc:'סיבוב לילי בקזינו ה־Corvin — אווירה מודרנית, שולחנות חמים.', img:'https://images.unsplash.com/photo-1596731498067-8e57f0dc5e0d?auto=format&fit=crop&w=900&q=80', icon:'🎲', optional:true, loc:{lat:47.4865,lng:19.0731,name:'Las Vegas Casino Corvin'}, rating:4.1, reviews:1500, transports:[{mode:'walk',mins:15},{mode:'bolt',mins:7,note:'מומלץ'}] },
@@ -205,6 +222,7 @@ const DAYS = [
       { time:'11:30', title:'שופינג ב־Arena Mall', desc:'Primark, New Yorker ועוד — מטרו M2 ישיר. זמן למלא את המזוודה.', img:'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80', icon:'🛒', loc:{lat:47.5024,lng:19.0992,name:'Arena Mall'}, rating:4.4, reviews:35000, alt:{name:'Okay Italia / Arena Food Court', desc:'אופציות לאוכל — פיצרייה איטלקית אותנטית או מתחם הפוד קורט של הקניון.'}, transports:[{mode:'metro',mins:12,note:'M2 ישיר · מומלץ'},{mode:'bolt',mins:10},{mode:'walk',mins:30}] },
       { time:'15:00', title:'חזרה לדירה להוריד שקיות', desc:'הפסקה קצרה לפני ההליכה הנופית האחרונה לאורך הדנובה.', img:'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=900&q=80', icon:'🏠', loc:{lat:47.4979,lng:19.0608,name:'הדירה'}, transports:[{mode:'metro',mins:15,note:'M2 + הליכה'},{mode:'bolt',mins:10,note:'מומלץ עם שקיות'}] },
       { time:'16:00', title:'הליכה נופית לאורך הדנובה', desc:'נעליים על שפת הדנובה (Shoes on the Danube Bank) והצצה לפרלמנט המואר.', img:'https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=900&q=80', icon:'🌉', loc:{lat:47.5022,lng:19.0455,name:'Shoes on the Danube'}, rating:4.7, reviews:48000, transports:[{mode:'walk',mins:18,note:'מומלץ'},{mode:'bolt',mins:8},{mode:'metro',mins:12,note:'M2 · Kossuth tér'}] },
+      { time:'אופציונלי', title:'📸 המלצה מאינסטגרם', desc:'אופציה אחרונה לרילס הזה לפני ארוחת הפרידה.', img:'https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=80', icon:'📸', optional:true, reel:'DYuCHfHiRvT' },
       { time:'19:30', title:'ארוחת פרידה · Beestro 14', desc:'סטייקים, יין טוב ואווירה אינטימית לסיום מושלם של החופשה.', img:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80', icon:'🍷', reserved:true, loc:{lat:47.5008,lng:19.0610,name:'Beestro 14'}, ig:'beestro14', rating:4.6, reviews:1800, transports:[{mode:'walk',mins:15,note:'מומלץ'},{mode:'bolt',mins:8}] },
     ]
   },
@@ -378,6 +396,9 @@ function activityCard(a, idx) {
     <span class="absolute top-3 start-3 bg-slate-700/80 text-slate-200 text-[11px] font-bold px-2 py-0.5 rounded-full">אופציונלי</span>` : '';
   const highlightBadge = a.highlight ? `
     <span class="absolute top-3 start-3 grad-gold text-ink-950 text-[11px] font-black px-2 py-0.5 rounded-full">⭐ אירוע השיא</span>` : '';
+  const igBadge = a.igMust ? `
+    <span class="absolute top-3 end-3 bg-gradient-to-br from-pink-500 to-fuchsia-600 text-white text-[11px] font-black px-2 py-0.5 rounded-full shadow-lg">🔥 MUST · IG</span>`
+    : (a.reel ? `<span class="absolute top-3 end-3 bg-pink-500/80 text-white text-[11px] font-black px-2 py-0.5 rounded-full">📸 IG</span>` : '');
   const alt = a.alt ? `
     <details class="mt-3 group">
       <summary class="flex items-center justify-between gap-2 text-sm text-gold-400 hover:text-gold-500 font-semibold py-2 px-3 rounded-lg bg-gold-500/5 border border-gold-500/20">
@@ -397,7 +418,7 @@ function activityCard(a, idx) {
       <div class="relative h-44 sm:h-full">
         <img src="${a.img}" alt="" loading="lazy" class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-t from-ink-900/80 via-transparent to-transparent"></div>
-        ${optionalBadge}${highlightBadge}
+        ${optionalBadge}${highlightBadge}${igBadge}
       </div>
       <div class="p-4 md:p-5">
         <div class="flex items-center gap-3 mb-2">
@@ -407,6 +428,13 @@ function activityCard(a, idx) {
         <h3 class="text-xl font-extrabold mb-1">${a.title} ${ratingPill(a)}</h3>
         <p class="text-slate-400 text-sm leading-relaxed">${a.desc}</p>
         ${a.loc ? `<div class="mt-2 text-xs text-slate-500">📍 ${a.loc.name}</div>` : ''}
+        ${a.reel ? `
+          <div class="mt-3 rounded-lg overflow-hidden border border-pink-500/30 bg-ink-900 max-w-xs">
+            <div class="relative" style="padding-top:125%;">
+              <iframe src="https://www.instagram.com/reel/${a.reel}/embed" class="absolute inset-0 w-full h-full" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
+            </div>
+            <a href="https://www.instagram.com/reel/${a.reel}/" target="_blank" rel="noopener" class="block text-center py-2 text-xs font-bold bg-pink-500/20 text-pink-300 hover:bg-pink-500/30 transition">📸 פתח באינסטגרם ↗</a>
+          </div>` : ''}
         ${venueLinks(a)}
         ${alt}
       </div>
@@ -814,6 +842,16 @@ const EXTRAS = [
   },
 ];
 
+/* ============================================
+   INSTAGRAM RECOMMENDATIONS — reels picked manually
+============================================ */
+const IG_RECS = [
+  { code:'DVeiZ_miOZ_', must:true,  title:'המלצת חובה #1',     sub:'מאינסטגרם · לא לפספס',          note:'מקום שווה — צפו ברילס לפרטים על המנה והמסעדה.' },
+  { code:'DYAgzIMIU3x', must:true,  title:'המלצת חובה #2',     sub:'מאינסטגרם · לא לפספס',          note:'עוד טיפ מצוין מהרילס — מומלץ במיוחד.' },
+  { code:'DXZeYv8DMvf', must:false, title:'המלצה מאינסטגרם',    sub:'שווה לבדוק אם יש זמן',          note:'אופציה חמודה שצפה באינסטגרם — צפו ברילס.' },
+  { code:'DYuCHfHiRvT', must:false, title:'המלצה מאינסטגרם',    sub:'שווה לבדוק אם יש זמן',          note:'עוד טיפ מצוין שראיתי באינסטגרם — צפו ברילס.' },
+];
+
 function gmapsUrl(items) {
   // Multi-stop Google Maps directions using place NAMES (more readable than coords)
   const pts = items.map(it => encodeURIComponent((it.name || it.title || '') + ' Budapest')).join('/');
@@ -821,6 +859,33 @@ function gmapsUrl(items) {
 }
 function gmapsSingle(it) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent((it.name || it.title || '') + ' ' + (it.addr||'') + ' Budapest')}`;
+}
+
+function renderIGRecs() {
+  const cards = IG_RECS.map(r => `
+    <div class="card-hover bg-ink-800/60 rounded-2xl border ${r.must ? 'border-pink-500/50 shadow-glow' : 'border-pink-500/20'} overflow-hidden flex flex-col relative">
+      ${r.must ? `<span class="absolute -top-2 -start-2 z-10 bg-gradient-to-br from-pink-500 to-fuchsia-600 text-white text-xs font-black px-3 py-1 rounded-full shadow-lg">🔥 MUST</span>` : ''}
+      <div class="relative bg-ink-900" style="padding-top:125%;">
+        <iframe src="https://www.instagram.com/reel/${r.code}/embed"
+                class="absolute inset-0 w-full h-full"
+                frameborder="0" scrolling="no" allowtransparency="true"
+                loading="lazy"></iframe>
+      </div>
+      <div class="p-4 flex-1 flex flex-col">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="text-pink-400">📸</span>
+          <h4 class="font-extrabold text-lg leading-tight">${r.title}</h4>
+        </div>
+        <div class="text-xs text-pink-300/80 mb-2">${r.sub}</div>
+        <p class="text-sm text-slate-400 leading-relaxed flex-1">${r.note}</p>
+        <a href="https://www.instagram.com/reel/${r.code}/" target="_blank" rel="noopener"
+           class="mt-3 inline-flex items-center justify-center gap-1 text-xs font-bold px-3 py-2 rounded-md bg-pink-500/20 hover:bg-pink-500/30 text-pink-300 border border-pink-500/30 transition">
+          📸 פתח באינסטגרם ↗
+        </a>
+      </div>
+    </div>`).join('');
+
+  document.getElementById('igRecsContent').innerHTML = cards;
 }
 
 function renderExtras() {
@@ -980,6 +1045,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMap();
   renderTabs();
   renderDay();
+  renderIGRecs();
   renderExtras();
   const locBtn = document.getElementById('locateBtn');
   if (locBtn) locBtn.addEventListener('click', requestLocation);
