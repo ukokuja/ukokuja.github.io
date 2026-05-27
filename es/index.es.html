@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="es" dir="ltr">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>בודפשט 2026 · מסלול 5 ימים</title>
+<title>Budapest 2026 · Itinerario 5 días</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@
   .leaflet-container { background: #0f141c; border-radius: 1rem; }
   .leaflet-tile { filter: brightness(.6) saturate(.9) hue-rotate(-10deg); }
   .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: #161c26; color: #f5f5f5; border: 1px solid rgba(245,196,81,.25); }
-  .leaflet-popup-content { font-family: 'Heebo', sans-serif; direction: rtl; }
+  .leaflet-popup-content { font-family: 'Heebo', sans-serif; direction: ltr; }
   .tab-active { background: linear-gradient(135deg, rgba(245,196,81,.18), rgba(245,196,81,.05)); color: #f5c451; border-color: rgba(245,196,81,.45) !important; box-shadow: 0 8px 24px -12px rgba(245,196,81,.5); }
   details > summary { list-style: none; cursor: pointer; }
   details > summary::-webkit-details-marker { display: none; }
@@ -73,22 +73,22 @@
     <div class="flex items-center gap-3 mb-6">
       <div class="w-10 h-10 rounded-xl grad-gold flex items-center justify-center text-ink-950 font-black text-lg">B</div>
       <span class="text-sm tracking-widest text-slate-400 uppercase">Budapest · 2026</span>
-      <a href="index.es.html" class="ms-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-sky-500/15 hover:bg-sky-500/25 text-sky-300 border border-sky-500/30 text-xs font-bold transition" title="Versión en Español">
-        🌎 ES · Español
+      <a href="index.html" class="ms-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gold-500/15 hover:bg-gold-500/25 text-gold-300 border border-gold-500/30 text-xs font-bold transition" title="גרסה בעברית">
+        🇮🇱 HE · עברית
       </a>
     </div>
     <h1 class="text-4xl md:text-6xl font-black leading-tight">
-      בודפשט <span class="text-transparent bg-clip-text grad-gold" style="-webkit-background-clip:text;background-clip:text;">5 ימים</span><br/>
-      כדורגל, סטייקים ולילה לבן
+      Budapest <span class="text-transparent bg-clip-text grad-gold" style="-webkit-background-clip:text;background-clip:text;">5 días</span><br/>
+      Fútbol, steaks y noche larga
     </h1>
     <p class="mt-4 text-slate-300 max-w-2xl text-base md:text-lg">
-      מסלול דינמי לחמישה ימים בלב הרובע השביעי — מהגמר של ליגת האלופות באצטדיון פושקש, דרך מסעדות יוקרה ועד ברי החורבות האייקוניים.
+      Itinerario dinámico de cinco días en el corazón del distrito VII — desde la final de la Champions en el Puskás Aréna, pasando por restaurantes top hasta los icónicos ruin bars.
     </p>
     <div class="mt-6 flex flex-wrap gap-3 text-sm">
-      <span class="glass px-3 py-1.5 rounded-full">📍 בסיס: Nyár utca, רובע VII</span>
-      <span class="glass px-3 py-1.5 rounded-full">✈️ 29 במאי – 2 ביוני</span>
-      <span class="glass px-3 py-1.5 rounded-full">⚽ גמר ה־UCL</span>
-      <span class="glass px-3 py-1.5 rounded-full">🥩 3 הזמנות סטייק</span>
+      <span class="glass px-3 py-1.5 rounded-full">📍 Base: Nyár utca, distrito VII</span>
+      <span class="glass px-3 py-1.5 rounded-full">✈️ 29 mayo – 2 junio</span>
+      <span class="glass px-3 py-1.5 rounded-full">⚽ Final de la UCL</span>
+      <span class="glass px-3 py-1.5 rounded-full">🥩 3 reservas de steak</span>
     </div>
   </div>
 </header>
@@ -111,9 +111,9 @@
     <aside class="lg:sticky lg:top-24 h-fit">
       <div class="glass rounded-2xl p-4">
         <div class="flex items-center justify-between mb-3 gap-2 flex-wrap">
-          <h3 class="font-bold text-lg">🗺️ מפת היום</h3>
+          <h3 class="font-bold text-lg">🗺️ Mapa del día</h3>
           <div class="flex items-center gap-2">
-            <button id="locateBtn" class="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1.5 rounded-lg bg-emerald2-500/15 hover:bg-emerald2-500/25 text-emerald2-400 border border-emerald2-500/30 transition" title="המיקום שלי">📍 המיקום שלי</button>
+            <button id="locateBtn" class="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1.5 rounded-lg bg-emerald2-500/15 hover:bg-emerald2-500/25 text-emerald2-400 border border-emerald2-500/30 transition" title="Mi ubicación">📍 Mi ubicación</button>
             <span id="mapDayLabel" class="text-xs text-gold-400 font-semibold"></span>
           </div>
         </div>
@@ -127,8 +127,8 @@
   <section id="extras" class="mt-16 pt-8 border-t border-white/5">
     <div class="flex items-center justify-between flex-wrap gap-3 mb-6">
       <div>
-        <h2 class="text-3xl md:text-4xl font-black">🎯 מתחמי הבונוס</h2>
-        <p class="text-slate-400 mt-1">המבורגרים, ברי כדורגל וקזינו — לפי השעות, לא לפי היום.</p>
+        <h2 class="text-3xl md:text-4xl font-black">🎯 Sitios bonus</h2>
+        <p class="text-slate-400 mt-1">Hamburguesas, bares deportivos y casinos — por horario, no por día.</p>
       </div>
       <div id="extrasMapsBtns" class="flex flex-wrap gap-2"></div>
     </div>
@@ -139,16 +139,16 @@
       <div class="flex items-start justify-between flex-wrap gap-3">
         <div class="flex-1 min-w-[260px]">
           <h3 class="text-2xl font-extrabold flex items-center gap-2">
-            <span class="text-sky-400">🤖</span> פרומפט להמלצות AI
+            <span class="text-sky-400">🤖</span> Prompt para recomendaciones AI
           </h3>
           <p class="text-slate-400 text-sm mt-1 leading-relaxed">
-            לחצו על הכפתור כדי לקבל פרומפט מוכן עם <b class="text-sky-300">כל המקומות שברשימה</b> (ימים + בונוסים + אינסטגרם).
-            פותחים ChatGPT / Claude / Gemini, מדביקים, ואומרים איפה אתם, מה השעה ומה בא לכם — ה־AI ימליץ מתוך הרשימה שלכם בלבד.
+            Hacé click para obtener un prompt listo con <b class="text-sky-300">todos los lugares de la lista</b> (días + bonus + Instagram).
+            Abrí ChatGPT / Claude / Gemini, pegá, y decile dónde estás, qué hora es y qué te gustaría — el AI recomienda solo de tu lista.
           </p>
         </div>
         <button id="openPromptBtn"
                 class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-600 text-white font-bold text-sm hover:opacity-90 transition shadow-lg shrink-0">
-          🤖 פתח פרומפט להעתקה
+          🤖 Abrir prompt para copiar
         </button>
       </div>
     </div>
@@ -158,9 +158,9 @@
       <div class="flex items-center justify-between flex-wrap gap-3 mb-4">
         <div>
           <h3 class="text-2xl font-extrabold flex items-center gap-2">
-            <span class="text-pink-400">📸</span> המלצות מאינסטגרם
+            <span class="text-pink-400">📸</span> Recomendaciones de Instagram
           </h3>
-          <p class="text-slate-400 text-sm mt-0.5">רילסים שראיתי — שניים מסומנים כ־<span class="text-pink-300 font-bold">MUST</span>, השאר שווה לבדוק.</p>
+          <p class="text-slate-400 text-sm mt-0.5">Reels que vimos — dos marcados como <span class="text-pink-300 font-bold">MUST</span>, los otros vale la pena revisar.</p>
         </div>
       </div>
       <div id="igRecsContent" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
@@ -175,16 +175,16 @@
   <div class="max-w-4xl mx-auto my-8 bg-ink-900 border border-sky-500/40 rounded-2xl shadow-2xl">
     <div class="flex items-center justify-between gap-3 p-5 border-b border-white/10 sticky top-0 bg-ink-900/95 rounded-t-2xl">
       <div>
-        <h3 class="text-xl font-extrabold flex items-center gap-2"><span class="text-sky-400">🤖</span> פרומפט מוכן להעתקה</h3>
-        <p class="text-xs text-slate-400 mt-1">הדביקו ב־ChatGPT / Claude / Gemini ושאלו ב־free text מה אתם מחפשים.</p>
+        <h3 class="text-xl font-extrabold flex items-center gap-2"><span class="text-sky-400">🤖</span> Prompt listo para copiar</h3>
+        <p class="text-xs text-slate-400 mt-1">Pegalo en ChatGPT / Claude / Gemini y preguntá libremente qué buscás.</p>
       </div>
       <div class="flex items-center gap-2 shrink-0">
-        <button id="copyPromptBtn" class="px-4 py-2 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-600 text-white font-bold text-sm hover:opacity-90 transition">📋 העתק</button>
-        <button id="closePromptBtn" class="px-3 py-2 rounded-xl bg-slate-700/60 hover:bg-slate-600/60 text-slate-200 font-bold text-sm transition">✕ סגור</button>
+        <button id="copyPromptBtn" class="px-4 py-2 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-600 text-white font-bold text-sm hover:opacity-90 transition">📋 Copiar</button>
+        <button id="closePromptBtn" class="px-3 py-2 rounded-xl bg-slate-700/60 hover:bg-slate-600/60 text-slate-200 font-bold text-sm transition">✕ Cerrar</button>
       </div>
     </div>
     <div class="p-5">
-      <div id="copyOkMsg" class="hidden mb-3 p-3 rounded-lg bg-emerald2-500/15 border border-emerald2-500/40 text-emerald2-300 text-sm font-bold">✓ הועתק! עכשיו הדביקו ב־AI שלכם.</div>
+      <div id="copyOkMsg" class="hidden mb-3 p-3 rounded-lg bg-emerald2-500/15 border border-emerald2-500/40 text-emerald2-300 text-sm font-bold">✓ ¡Copiado! Ahora pegalo en tu AI.</div>
       <textarea id="promptText" class="w-full h-[60vh] bg-ink-950 border border-white/10 rounded-xl p-4 text-xs text-slate-200 font-mono leading-relaxed resize-y" dir="ltr" spellcheck="false"></textarea>
     </div>
   </div>
@@ -192,7 +192,7 @@
 
 <footer class="border-t border-white/5 mt-12">
   <div class="max-w-7xl mx-auto px-5 md:px-8 py-8 text-center text-slate-500 text-sm">
-    מסלול אישי · בודפשט 2026 · יצא לדרך 🚀
+    Itinerario personal · Budapest 2026 · ¡A la aventura! 🚀
   </div>
 </footer>
 
@@ -200,80 +200,80 @@
 /* ============================================
    ITINERARY DATA
 ============================================ */
-const BASE = { name: 'הדירה — Nyár utca', gmaps: 'Nyár utca 7, Budapest', lat: 47.4979, lng: 19.0608, web: 'https://www.airbnb.com/rooms/22060696' };
+const BASE = { name: 'Apartamento — Nyár utca', gmaps: 'Nyár utca 7, Budapest', lat: 47.4979, lng: 19.0608, web: 'https://www.airbnb.com/rooms/22060696' };
 
 const DAYS = [
   {
-    id: 'fri', label: 'שישי', date: '29.5', sub: 'הגעה · פושקש · סטייק',
-    intro: 'יום ההגעה — מתאקלמים, אוכלים טוב, ופותחים את החופשה עם משחק האגדות באצטדיון פושקש. ערב חגיגי במיוחד: סבב סטייק ב־Hot Stone ואחריו Beestro 14 (הזמנה מאושרת · 3 סועדים · 21:30). קזינו אופציונלי לסיום.',
-    startBookend: { icon:'✈️', label:'נחיתה ב־BUD', sub:'נמל התעופה Liszt Ferenc', time:'07:30' },
-    afterStartHotel: { time:'08:30', label:'הגעה לדירה', sub:'הנחת מזוודות · Nyár utca',
-      transports:[{mode:'bolt',mins:30,note:'מומלץ'},{mode:'bus',mins:55,note:'100E + M3'}] },
+    id: 'fri', label: 'Viernes', date: '29.5', sub: 'Llegada · Puskás · Steak',
+    intro: 'Día de llegada — nos aclimatamos, comemos bien y arrancamos las vacaciones con el partido de leyendas en el Puskás Arena. Noche especial: ronda de steak en Hot Stone y después Beestro 14 (reserva confirmada · 3 personas · 21:30). Casino opcional al final.',
+    startBookend: { icon:'✈️', label:'Aterrizaje en BUD', sub:'Aeropuerto Liszt Ferenc', time:'07:30' },
+    afterStartHotel: { time:'08:30', label:'Llegada al apto', sub:'Dejar valijas · Nyár utca',
+      transports:[{mode:'bolt',mins:30,note:'recomendado'},{mode:'bus',mins:55,note:'100E + M3'}] },
     center: [47.499, 19.075], zoom: 13,
     activities: [
-      { time:'10:00', title:'ארוחת בוקר ב־Dorado Café', desc:'בית קפה שכונתי קטן ומלא אופי — קפה מצוין ובייקרי טרי לפתיחת היום.', img:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80', icon:'☕', loc:{lat:47.5006,lng:19.0631,name:'Dorado Café'}, ig:'doradocafe', rating:4.6, reviews:920, alt:{name:'Stika Budapest', desc:'בייגלה ניו־יורקי מעולה במרחק 2 דקות הליכה.'}, transports:[{mode:'walk',mins:3,note:'מומלץ'},{mode:'bolt',mins:4}] },
-      { time:'אופציונלי', title:'📸 Fluffy & Me Budapest 🥞', name:'Fluffy & Me Budapest', addr:'Hold u. 15, 1054 Budapest', desc:'פנקייקי סופלה יפניים מתנפחים — אחת ההמלצות הכי חמות. שווה בבוקר/צהריים אם יש חלון. צפו ברילס למטה.', img:'https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=900&q=80', icon:'📸', optional:true, igMust:true, reel:'DVeiZ_miOZ_', loc:{lat:47.5043,lng:19.0521} },
-      { time:'13:15', title:'צהריים ב־Bamba Marha Burger Bar', desc:'המבורגרים כשרים־בסטייל בכיכר Deák Ferenc — מנת פתיחה אגדית לפני המשחק.', img:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80', icon:'🍔', loc:{lat:47.4979,lng:19.0547,name:'Bamba Marha · Deák tér'}, ig:'bambamarha', web:'https://bambamarha.hu', rating:4.5, reviews:3800, alt:{name:"Simon's Burger", desc:'אופציה קלאסית להמבורגר במרחק קצר.'}, transports:[{mode:'walk',mins:10,note:'מומלץ'},{mode:'bolt',mins:6},{mode:'metro',mins:8,note:'M1/M2/M3'}] },
-      { time:'15:30', title:'משחק אגדות ליגת האלופות · אצטדיון פושקש', desc:'מטרו M2 ישיר עד Puskás Aréna. מתחממים לקראת הגמר עם משחק האגדות.', img:'https://images.unsplash.com/photo-1518604666860-9ed391f76460?auto=format&fit=crop&w=900&q=80', icon:'⚽', loc:{lat:47.5031,lng:19.0975,name:'Puskás Aréna'}, ig:'puskasarena', web:'https://www.puskasarena.hu', rating:4.7, reviews:18500, transports:[{mode:'metro',mins:15,note:'M2 ישיר · מומלץ'},{mode:'bolt',mins:12},{mode:'bus',mins:25}] },
-      { time:'20:00', title:'ארוחת ערב · Hot Stone Steakhouse', desc:'הסטייק המיתולוגי על אבן לוהטת — צורבים בעצמכם על השולחן. חוויה חובה.', img:'https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=900&q=80', icon:'🥩', reserved:true, loc:{lat:47.4956,lng:19.0570,name:'Hot Stone Steakhouse'}, ig:'hotstonesteakhouse', web:'https://hotstonesteakhouse.com', rating:4.7, reviews:5400, transports:[{mode:'metro',mins:18,note:'M2 חזרה'},{mode:'bolt',mins:15,note:'מומלץ'}] },
-      { time:'21:30', title:'ארוחת ערב #2 · Beestro 14', desc:'הזמנה מאושרת · 3 סועדים · 21:30–23:30. סטייקים, יין טוב ואווירה אינטימית — סבב שני לטעימת מנות נוספות.', img:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80', icon:'🍷', reserved:true, loc:{lat:47.5008,lng:19.0610,name:'Beestro 14'}, ig:'beestro14', rating:4.6, reviews:1800, transports:[{mode:'walk',mins:10,note:'מומלץ'},{mode:'bolt',mins:6}] },
-      { time:'23:45', title:'Tropicana Casino', desc:'הליכה רגועה אל הקזינו — רולטה, בלאקג׳ק וכוסית לסיום הלילה. אופציונלי אם עוד יש כוחות אחרי שתי ארוחות.', img:'https://images.unsplash.com/photo-1606167668584-78701c57f13d?auto=format&fit=crop&w=900&q=80', icon:'🎰', optional:true, loc:{lat:47.4978,lng:19.0530,name:'Tropicana Casino'}, web:'https://www.tropicanabudapest.hu', rating:4.2, reviews:2100, transports:[{mode:'walk',mins:7,note:'מומלץ'},{mode:'bolt',mins:5}] },
+      { time:'10:00', title:'Desayuno en Dorado Café', desc:'Café de barrio chiquito y con personalidad — buen café y bollería fresca para arrancar el día.', img:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80', icon:'☕', loc:{lat:47.5006,lng:19.0631,name:'Dorado Café'}, ig:'doradocafe', rating:4.6, reviews:920, alt:{name:'Stika Budapest', desc:'Bagels neoyorquinos excelentes a 2 minutos a pie.'}, transports:[{mode:'walk',mins:3,note:'recomendado'},{mode:'bolt',mins:4}] },
+      { time:'opcional', title:'📸 Fluffy & Me Budapest 🥞', name:'Fluffy & Me Budapest', addr:'Hold u. 15, 1054 Budapest', desc:'Pancakes soufflé japoneses esponjosos — una de las recomendaciones más calientes. Vale la pena a la mañana/mediodía si hay ventana. Mirá el reel abajo.', img:'https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=900&q=80', icon:'📸', optional:true, igMust:true, reel:'DVeiZ_miOZ_', loc:{lat:47.5043,lng:19.0521} },
+      { time:'13:15', title:'Almuerzo en Bamba Marha Burger Bar', desc:'Hamburguesas estilo kosher en plaza Deák Ferenc — entrada épica antes del partido.', img:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80', icon:'🍔', loc:{lat:47.4979,lng:19.0547,name:'Bamba Marha · Deák tér'}, ig:'bambamarha', web:'https://bambamarha.hu', rating:4.5, reviews:3800, alt:{name:"Simon's Burger", desc:'Opción clásica de burger a poca distancia.'}, transports:[{mode:'walk',mins:10,note:'recomendado'},{mode:'bolt',mins:6},{mode:'metro',mins:8,note:'M1/M2/M3'}] },
+      { time:'15:30', title:'Partido de leyendas de la Champions · Puskás Aréna', desc:'Metro M2 directo hasta Puskás Aréna. Calentamos para la final con el partido de leyendas.', img:'https://images.unsplash.com/photo-1518604666860-9ed391f76460?auto=format&fit=crop&w=900&q=80', icon:'⚽', loc:{lat:47.5031,lng:19.0975,name:'Puskás Aréna'}, ig:'puskasarena', web:'https://www.puskasarena.hu', rating:4.7, reviews:18500, transports:[{mode:'metro',mins:15,note:'M2 directo · recomendado'},{mode:'bolt',mins:12},{mode:'bus',mins:25}] },
+      { time:'20:00', title:'Cena · Hot Stone Steakhouse', desc:'El steak mítico sobre piedra caliente — lo sellás vos mismo en la mesa. Experiencia obligada.', img:'https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=900&q=80', icon:'🥩', reserved:true, loc:{lat:47.4956,lng:19.0570,name:'Hot Stone Steakhouse'}, ig:'hotstonesteakhouse', web:'https://hotstonesteakhouse.com', rating:4.7, reviews:5400, transports:[{mode:'metro',mins:18,note:'M2 vuelta'},{mode:'bolt',mins:15,note:'recomendado'}] },
+      { time:'21:30', title:'Cena #2 · Beestro 14', desc:'Reserva confirmada · 3 personas · 21:30–23:30. Steaks, buen vino y ambiente íntimo — segunda ronda para probar más platos.', img:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80', icon:'🍷', reserved:true, loc:{lat:47.5008,lng:19.0610,name:'Beestro 14'}, ig:'beestro14', rating:4.6, reviews:1800, transports:[{mode:'walk',mins:10,note:'recomendado'},{mode:'bolt',mins:6}] },
+      { time:'23:45', title:'Tropicana Casino', desc:'Caminata tranqui al casino — ruleta, blackjack y un trago para cerrar la noche. Opcional si quedan fuerzas después de dos cenas.', img:'https://images.unsplash.com/photo-1606167668584-78701c57f13d?auto=format&fit=crop&w=900&q=80', icon:'🎰', optional:true, loc:{lat:47.4978,lng:19.0530,name:'Tropicana Casino'}, web:'https://www.tropicanabudapest.hu', rating:4.2, reviews:2100, transports:[{mode:'walk',mins:7,note:'recomendado'},{mode:'bolt',mins:5}] },
     ]
   },
   {
-    id: 'sat', label: 'שבת', date: '30.5', sub: 'יום הגמר · UCL FINAL',
-    intro: 'היום שחיכינו לו — בוקר רגוע ב־Váci utca והשוק המרכזי, ארוחת גולאש הונגרית מסורתית, ואז חוגגים את גמר ליגת האלופות במסכי ענק בכיכר החופש. סיום אגדי בברי החורבות.',
+    id: 'sat', label: 'Sábado', date: '30.5', sub: 'Día de la Final · UCL FINAL',
+    intro: 'El día que esperábamos — mañana tranquila por Váci utca y el Mercado Central, almuerzo de goulash húngaro tradicional, y después celebramos la final de la Champions con pantallas gigantes en Szabadság tér. Cierre épico en los ruin bars.',
     center: [47.497, 19.055], zoom: 14,
     activities: [
-      { time:'11:00', title:'Váci utca והשוק המרכזי', desc:'טיול בולט ברחוב הראשי וסיור בשוק Nagyvásárcsarnok — תבלינים, פפריקה ופלפלים חריפים.', img:'https://images.unsplash.com/photo-1551867633-194f125bddfa?auto=format&fit=crop&w=900&q=80', icon:'🛍️', loc:{lat:47.4869,lng:19.0586,name:'Central Market Hall'}, rating:4.6, reviews:54000, transports:[{mode:'walk',mins:18,note:'מומלץ'},{mode:'bolt',mins:8},{mode:'metro',mins:12,note:'M3'}] },
-      { time:'אופציונלי', title:'📸 Dixie Budapest 🍪', name:'Dixie Budapest', addr:'Király u. 26, 1061 Budapest', desc:'עוגיות ענקיות בסגנון ניו־יורקי, ברחוב Király 26 — ממש ליד הדירה. שווה לקפוץ במהלך היום.', img:'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80', icon:'📸', optional:true, igMust:true, reel:'DYAgzIMIU3x', loc:{lat:47.4995,lng:19.0640} },
-      { time:'14:00', title:'צהריים · Mama Goulash / Gettó Gulyás', desc:'הגולאש ההונגרי האותנטי — מרק עשיר עם בשר ופפריקה, בדיוק לפני יום ארוך.', img:'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80', icon:'🍲', loc:{lat:47.4978,lng:19.0617,name:'Gettó Gulyás'}, ig:'gettogulyas', rating:4.5, reviews:6800, alt:{name:'Frici Papa / Kőleves', desc:'מטבח הונגרי ביתי במחירים נוחים — שתי אופציות מצוינות בסביבה.'}, transports:[{mode:'walk',mins:15,note:'מומלץ'},{mode:'bolt',mins:7}] },
-      { time:'16:30', title:'צעידה ל־Fan Zone · Szabadság tér', desc:'אווירת חגיגה בכיכר החופש (Plaza de la Libertad) לקראת המשחק הגדול.', img:'https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&w=900&q=80', icon:'🎉', loc:{lat:47.5051,lng:19.0505,name:'Szabadság tér Fan Zone'}, rating:4.6, reviews:8200, transports:[{mode:'walk',mins:12,note:'מומלץ'},{mode:'bolt',mins:7}] },
-      { time:'18:00', title:'⚽ גמר ליגת האלופות · מסכי ענק', desc:'הרגע שחיכינו לו. אלפי אוהדים, מסכי ענק וצרחות גול שמרעידות את הכיכר.', img:'https://images.unsplash.com/photo-1522778034537-20a2486be803?auto=format&fit=crop&w=900&q=80', icon:'🏆', highlight:true, loc:{lat:47.5051,lng:19.0505,name:'UCL FINAL · Fan Zone'}, transports:[{mode:'stay',mins:0,note:'נשארים בכיכר'}] },
-      { time:'21:00', title:'לילה בברי החורבות', desc:'Szimpla Kert ו־Gozsdu Udvar — הברים האייקוניים של בודפשט. מוזיקה, אורות וקירות מלאי גרפיטי.', img:'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=900&q=80', icon:'🍻', loc:{lat:47.4974,lng:19.0628,name:'Szimpla Kert'}, ig:'szimplakert', web:'https://szimpla.hu', rating:4.4, reviews:62000, transports:[{mode:'walk',mins:12,note:'מומלץ'},{mode:'bolt',mins:7}] },
-      { time:'00:30', title:'נשנוש לילה · Zing Burger', desc:'המבורגר מהיר ומעולה ברחוב Király — סגירה מושלמת ללילה.', img:'https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=900&q=80', icon:'🍔', loc:{lat:47.4990,lng:19.0640,name:'Zing Burger · Király u.'}, ig:'zingburger', web:'https://zingburger.hu', rating:4.5, reviews:2900, alt:{name:'מי שיש כוח — Karavan Street Food', desc:'דוכני סטריט פוד פתוחים עד מאוחר ממש ליד.'}, transports:[{mode:'walk',mins:3,note:'מומלץ'}] },
+      { time:'11:00', title:'Váci utca y el Mercado Central', desc:'Paseo por la calle principal y recorrida por el mercado Nagyvásárcsarnok — especias, páprika y chiles picantes.', img:'https://images.unsplash.com/photo-1551867633-194f125bddfa?auto=format&fit=crop&w=900&q=80', icon:'🛍️', loc:{lat:47.4869,lng:19.0586,name:'Central Market Hall'}, rating:4.6, reviews:54000, transports:[{mode:'walk',mins:18,note:'recomendado'},{mode:'bolt',mins:8},{mode:'metro',mins:12,note:'M3'}] },
+      { time:'opcional', title:'📸 Dixie Budapest 🍪', name:'Dixie Budapest', addr:'Király u. 26, 1061 Budapest', desc:'Cookies gigantes estilo neoyorquino, en Király 26 — al lado del apto. Vale la pena pasar durante el día.', img:'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80', icon:'📸', optional:true, igMust:true, reel:'DYAgzIMIU3x', loc:{lat:47.4995,lng:19.0640} },
+      { time:'14:00', title:'Almuerzo · Mama Goulash / Gettó Gulyás', desc:'El goulash húngaro auténtico — sopa rica con carne y páprika, justo antes de un día largo.', img:'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80', icon:'🍲', loc:{lat:47.4978,lng:19.0617,name:'Gettó Gulyás'}, ig:'gettogulyas', rating:4.5, reviews:6800, alt:{name:'Frici Papa / Kőleves', desc:'Cocina húngara casera a buenos precios — dos opciones excelentes cerca.'}, transports:[{mode:'walk',mins:15,note:'recomendado'},{mode:'bolt',mins:7}] },
+      { time:'16:30', title:'Caminata a la Fan Zone · Szabadság tér', desc:'Ambiente de fiesta en la Plaza de la Libertad camino al gran partido.', img:'https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&w=900&q=80', icon:'🎉', loc:{lat:47.5051,lng:19.0505,name:'Szabadság tér Fan Zone'}, rating:4.6, reviews:8200, transports:[{mode:'walk',mins:12,note:'recomendado'},{mode:'bolt',mins:7}] },
+      { time:'18:00', title:'⚽ Final de la Champions · Pantallas gigantes', desc:'El momento que esperábamos. Miles de hinchas, pantallas gigantes y gritos de gol que hacen vibrar la plaza.', img:'https://images.unsplash.com/photo-1522778034537-20a2486be803?auto=format&fit=crop&w=900&q=80', icon:'🏆', highlight:true, loc:{lat:47.5051,lng:19.0505,name:'UCL FINAL · Fan Zone'}, transports:[{mode:'stay',mins:0,note:'Nos quedamos en la plaza'}] },
+      { time:'21:00', title:'Noche en los ruin bars', desc:'Szimpla Kert y Gozsdu Udvar — los bares icónicos de Budapest. Música, luces y paredes llenas de grafitis.', img:'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=900&q=80', icon:'🍻', loc:{lat:47.4974,lng:19.0628,name:'Szimpla Kert'}, ig:'szimplakert', web:'https://szimpla.hu', rating:4.4, reviews:62000, transports:[{mode:'walk',mins:12,note:'recomendado'},{mode:'bolt',mins:7}] },
+      { time:'00:30', title:'Picada de noche · Zing Burger', desc:'Hamburguesa rápida y muy buena en calle Király — cierre perfecto de la noche.', img:'https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=900&q=80', icon:'🍔', loc:{lat:47.4990,lng:19.0640,name:'Zing Burger · Király u.'}, ig:'zingburger', web:'https://zingburger.hu', rating:4.5, reviews:2900, alt:{name:'Si quedan fuerzas — Karavan Street Food', desc:'Puestos de street food abiertos hasta tarde, muy al lado.'}, transports:[{mode:'walk',mins:3,note:'recomendado'}] },
     ]
   },
   {
-    id: 'sun', label: 'ראשון', date: '31.5', sub: 'יום גמיש · בחירה',
-    intro: 'יום גמיש — בראנץ׳ ב־Cirkusz ואז בחירה: ארמון בודה ומצודת הדייגים, או יום ספא במרחצאות Széchenyi. בערב סבב שני של Hot Stone ואופציה לקזינו.',
+    id: 'sun', label: 'Domingo', date: '31.5', sub: 'Día flexible · vos elegís',
+    intro: 'Día flexible — brunch en Cirkusz y después a elegir: Castillo de Buda y Bastión de los Pescadores, o día de spa en los baños Széchenyi. A la noche segunda ronda en Hot Stone y casino opcional.',
     center: [47.500, 19.060], zoom: 13, interactive:true,
     activities: [
-      { time:'10:30', title:'בראנץ׳ ב־Cirkusz', desc:'בית הקפה הכי טרנדי בעיר — חביתות, פנקייקים וקפה ברמה גבוהה.', img:'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=80', icon:'🥞', loc:{lat:47.4992,lng:19.0610,name:'Cirkusz Café'}, ig:'cirkuszcafe', rating:4.5, reviews:5100, alt:{name:'Ramazuri Bistronomy', desc:'אופציה מצוינת לבראנץ׳ בסביבה — אווירה צעירה ותפריט עשיר.'}, transports:[{mode:'walk',mins:4,note:'מומלץ'},{mode:'bolt',mins:5}] },
-      { time:'אופציונלי', title:'📸 KOZO Cheesecake 🍰', name:'KOZO Cheesecake Budapest', addr:'Budapest (KOZO – Cheesecake & Coffee)', desc:'באסק צ׳יזקייק עם תחתית שרופה ומרקם קרמי — 100% ללא גלוטן. יום גמיש = הזדמנות מצוינת.', img:'https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?auto=format&fit=crop&w=900&q=80', icon:'📸', optional:true, reel:'DXZeYv8DMvf', loc:{lat:47.5005,lng:19.0615} },
+      { time:'10:30', title:'Brunch en Cirkusz', desc:'El café más trendy de la ciudad — tortillas, pancakes y café de alto nivel.', img:'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=80', icon:'🥞', loc:{lat:47.4992,lng:19.0610,name:'Cirkusz Café'}, ig:'cirkuszcafe', rating:4.5, reviews:5100, alt:{name:'Ramazuri Bistronomy', desc:'Opción excelente para brunch cerca — ambiente joven y carta rica.'}, transports:[{mode:'walk',mins:4,note:'recomendado'},{mode:'bolt',mins:5}] },
+      { time:'opcional', title:'📸 KOZO Cheesecake 🍰', name:'KOZO Cheesecake Budapest', addr:'Budapest (KOZO – Cheesecake & Coffee)', desc:'Basque burnt cheesecake con base quemada y textura cremosa — 100% sin gluten. Día flexible = oportunidad ideal.', img:'https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?auto=format&fit=crop&w=900&q=80', icon:'📸', optional:true, reel:'DXZeYv8DMvf', loc:{lat:47.5005,lng:19.0615} },
       // afternoon paths handled below
-      { time:'20:30', title:'ארוחת ערב · Hot Stone Steakhouse', desc:'סבב שני באבן הלוהטת — כי פעם אחת זה לא מספיק.', img:'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=80', icon:'🥩', reserved:true, loc:{lat:47.4956,lng:19.0570,name:'Hot Stone Steakhouse'}, ig:'hotstonesteakhouse', web:'https://hotstonesteakhouse.com', rating:4.7, reviews:5400, transports:[{mode:'walk',mins:8,note:'מומלץ'},{mode:'bolt',mins:5}] },
-      { time:'23:00', title:'אופציונלי · Las Vegas Casino Corvin', desc:'סיבוב לילי בקזינו ה־Corvin — אווירה מודרנית, שולחנות חמים.', img:'https://images.unsplash.com/photo-1596731498067-8e57f0dc5e0d?auto=format&fit=crop&w=900&q=80', icon:'🎲', optional:true, loc:{lat:47.4865,lng:19.0731,name:'Las Vegas Casino Corvin'}, rating:4.1, reviews:1500, transports:[{mode:'walk',mins:15},{mode:'bolt',mins:7,note:'מומלץ'}] },
+      { time:'20:30', title:'Cena · Hot Stone Steakhouse', desc:'Segunda ronda en la piedra caliente — porque una vez no alcanza.', img:'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=80', icon:'🥩', reserved:true, loc:{lat:47.4956,lng:19.0570,name:'Hot Stone Steakhouse'}, ig:'hotstonesteakhouse', web:'https://hotstonesteakhouse.com', rating:4.7, reviews:5400, transports:[{mode:'walk',mins:8,note:'recomendado'},{mode:'bolt',mins:5}] },
+      { time:'23:00', title:'Opcional · Las Vegas Casino Corvin', desc:'Vuelta nocturna por el casino Corvin — ambiente moderno, mesas calientes.', img:'https://images.unsplash.com/photo-1596731498067-8e57f0dc5e0d?auto=format&fit=crop&w=900&q=80', icon:'🎲', optional:true, loc:{lat:47.4865,lng:19.0731,name:'Las Vegas Casino Corvin'}, rating:4.1, reviews:1500, transports:[{mode:'walk',mins:15},{mode:'bolt',mins:7,note:'recomendado'}] },
     ],
     paths: {
-      A: { label:'מסלול A · המשך טיול', icon:'🏰', items: [
-        { time:'11:45', title:'אוטובוס 16 לארמון בודה', desc:'נסיעה נופית במעלה הגבעה אל הארמון המלכותי המרהיב.', img:'https://images.unsplash.com/photo-1551867633-194f125bddfa?auto=format&fit=crop&w=900&q=80', icon:'🚌', loc:{lat:47.4961,lng:19.0397,name:'Buda Castle'}, rating:4.7, reviews:64000, transports:[{mode:'bus',mins:25,note:'קו 16 · מומלץ'},{mode:'bolt',mins:12},{mode:'walk',mins:35}] },
-        { time:'13:30', title:"מצודת הדייגים · Fisherman's Bastion", desc:'נקודת התצפית האייקונית עם הצריחים הלבנים והנוף לדנובה ולפרלמנט.', img:'https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=900&q=80', icon:'🏰', loc:{lat:47.5020,lng:19.0344,name:"Fisherman's Bastion"}, rating:4.8, reviews:95000, transports:[{mode:'walk',mins:8,note:'מומלץ'}] },
-        { time:'15:30', title:'ארוחה ב־Ramazuri Bistronomy', desc:'מטבח מודרני בכיכר Klauzál — מקום מצוין לנוח אחרי הצעידה.', img:'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80', icon:'🍽️', loc:{lat:47.4990,lng:19.0613,name:'Ramazuri Bistronomy'}, rating:4.5, reviews:2400, transports:[{mode:'bus',mins:25,note:'קו 16 + הליכה'},{mode:'bolt',mins:12,note:'מומלץ'}] },
+      A: { label:'Ruta A · seguimos paseando', icon:'🏰', items: [
+        { time:'11:45', title:'Bus 16 al Castillo de Buda', desc:'Recorrido panorámico subiendo la colina al imponente palacio real.', img:'https://images.unsplash.com/photo-1551867633-194f125bddfa?auto=format&fit=crop&w=900&q=80', icon:'🚌', loc:{lat:47.4961,lng:19.0397,name:'Buda Castle'}, rating:4.7, reviews:64000, transports:[{mode:'bus',mins:25,note:'Línea 16 · recomendado'},{mode:'bolt',mins:12},{mode:'walk',mins:35}] },
+        { time:'13:30', title:"Bastión de los Pescadores · Fisherman's Bastion", desc:'Mirador icónico con las torres blancas y vista al Danubio y al Parlamento.', img:'https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=900&q=80', icon:'🏰', loc:{lat:47.5020,lng:19.0344,name:"Fisherman's Bastion"}, rating:4.8, reviews:95000, transports:[{mode:'walk',mins:8,note:'recomendado'}] },
+        { time:'15:30', title:'Comida en Ramazuri Bistronomy', desc:'Cocina moderna en plaza Klauzál — lugar ideal para descansar después de caminar.', img:'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80', icon:'🍽️', loc:{lat:47.4990,lng:19.0613,name:'Ramazuri Bistronomy'}, rating:4.5, reviews:2400, transports:[{mode:'bus',mins:25,note:'Línea 16 + caminata'},{mode:'bolt',mins:12,note:'recomendado'}] },
       ]},
-      B: { label:'מסלול B · רוגע ומרחצאות', icon:'♨️', items: [
-        { time:'14:00', title:'Bolt למרחצאות Széchenyi', desc:'אחד המרחצאות המפורסמים בעולם — בריכות מים חמים, סאונה ושתיין רטוב.', img:'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=80', icon:'♨️', loc:{lat:47.5188,lng:19.0813,name:'Széchenyi Thermal Baths'}, transports:[{mode:'bolt',mins:12,note:'מומלץ'},{mode:'metro',mins:18,note:'M1 לסטיוצי'},{mode:'walk',mins:35}] },
-        { time:'17:30', title:'חזרה לדירה לרענון', desc:'מקלחת קצרה ומנוחה לפני סבב הסטייק השני של החופשה.', img:'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=80', icon:'🛋️', loc:{lat:47.4979,lng:19.0608,name:'הדירה'}, transports:[{mode:'bolt',mins:12,note:'מומלץ'},{mode:'metro',mins:18,note:'M1'}] },
+      B: { label:'Ruta B · relax y baños termales', icon:'♨️', items: [
+        { time:'14:00', title:'Bolt a los baños Széchenyi', desc:'Uno de los baños termales más famosos del mundo — piscinas de agua caliente, sauna y trago en remojo.', img:'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=80', icon:'♨️', loc:{lat:47.5188,lng:19.0813,name:'Széchenyi Thermal Baths'}, transports:[{mode:'bolt',mins:12,note:'recomendado'},{mode:'metro',mins:18,note:'M1 a Hősök tere'},{mode:'walk',mins:35}] },
+        { time:'17:30', title:'Vuelta al apto para refrescarse', desc:'Ducha corta y descanso antes de la segunda ronda de steak del viaje.', img:'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=80', icon:'🛋️', loc:{lat:47.4979,lng:19.0608,name:'Apartamento'}, transports:[{mode:'bolt',mins:12,note:'recomendado'},{mode:'metro',mins:18,note:'M1'}] },
       ]}
     }
   },
   {
-    id: 'mon', label: 'שני', date: '1.6', sub: 'שופינג · פרידה',
-    intro: 'יום אחרון מלא — שופינג ב־Arena Mall עם המטרו, חזרה לפרוק שקיות, הליכה נופית לאורך הדנובה עד הפרלמנט ולסיום ארוחת פרידה אינטימית ב־Beestro 14.',
+    id: 'mon', label: 'Lunes', date: '1.6', sub: 'Shopping · Despedida',
+    intro: 'Último día completo — shopping en Arena Mall con el metro, vuelta a dejar las bolsas, caminata escénica por el Danubio hasta el Parlamento y cierre con cena de despedida íntima en Beestro 14.',
     center: [47.502, 19.075], zoom: 13,
     activities: [
-      { time:'11:30', title:'שופינג ב־Arena Mall', desc:'Primark, New Yorker ועוד — מטרו M2 ישיר. זמן למלא את המזוודה.', img:'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80', icon:'🛒', loc:{lat:47.5024,lng:19.0992,name:'Arena Mall'}, rating:4.4, reviews:35000, alt:{name:'Okay Italia / Arena Food Court', desc:'אופציות לאוכל — פיצרייה איטלקית אותנטית או מתחם הפוד קורט של הקניון.'}, transports:[{mode:'metro',mins:12,note:'M2 ישיר · מומלץ'},{mode:'bolt',mins:10},{mode:'walk',mins:30}] },
-      { time:'15:00', title:'חזרה לדירה להוריד שקיות', desc:'הפסקה קצרה לפני ההליכה הנופית האחרונה לאורך הדנובה.', img:'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=900&q=80', icon:'🏠', loc:{lat:47.4979,lng:19.0608,name:'הדירה'}, transports:[{mode:'metro',mins:15,note:'M2 + הליכה'},{mode:'bolt',mins:10,note:'מומלץ עם שקיות'}] },
-      { time:'16:00', title:'הליכה נופית לאורך הדנובה', desc:'נעליים על שפת הדנובה (Shoes on the Danube Bank) והצצה לפרלמנט המואר.', img:'https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=900&q=80', icon:'🌉', loc:{lat:47.5022,lng:19.0455,name:'Shoes on the Danube'}, rating:4.7, reviews:48000, transports:[{mode:'walk',mins:18,note:'מומלץ'},{mode:'bolt',mins:8},{mode:'metro',mins:12,note:'M2 · Kossuth tér'}] },
-      { time:'אופציונלי', title:'📸 Flatty Coffee Shop ☕', name:'Flatty Coffee Shop', addr:'Sas u. 11, 1051 Budapest (ליד הבזיליקה)', desc:'אייסד טירמיסו לאטה ויראלי ליד הבזיליקה — אופציה חמודה לפני ארוחת הפרידה.', img:'https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=80', icon:'📸', optional:true, reel:'DYuCHfHiRvT', loc:{lat:47.5004,lng:19.0521} },
-      { time:'19:30', title:'ארוחת פרידה · Beestro 14', desc:'הזמנה מאושרת · 3 סועדים · 19:30–21:30. סטייקים, יין טוב ואווירה אינטימית לסיום מושלם של החופשה.', img:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80', icon:'🍷', reserved:true, loc:{lat:47.5008,lng:19.0610,name:'Beestro 14'}, ig:'beestro14', rating:4.6, reviews:1800, transports:[{mode:'walk',mins:15,note:'מומלץ'},{mode:'bolt',mins:8}] },
+      { time:'11:30', title:'Shopping en Arena Mall', desc:'Primark, New Yorker y más — metro M2 directo. Hora de llenar la valija.', img:'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80', icon:'🛒', loc:{lat:47.5024,lng:19.0992,name:'Arena Mall'}, rating:4.4, reviews:35000, alt:{name:'Okay Italia / Arena Food Court', desc:'Opciones para comer — pizzería italiana auténtica o el food court del shopping.'}, transports:[{mode:'metro',mins:12,note:'M2 directo · recomendado'},{mode:'bolt',mins:10},{mode:'walk',mins:30}] },
+      { time:'15:00', title:'Vuelta al apto a dejar bolsas', desc:'Pausa breve antes del último paseo panorámico por el Danubio.', img:'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=900&q=80', icon:'🏠', loc:{lat:47.4979,lng:19.0608,name:'Apartamento'}, transports:[{mode:'metro',mins:15,note:'M2 + caminata'},{mode:'bolt',mins:10,note:'recomendado con bolsas'}] },
+      { time:'16:00', title:'Paseo panorámico por el Danubio', desc:'Zapatos a orillas del Danubio (Shoes on the Danube Bank) y vista al Parlamento iluminado.', img:'https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=900&q=80', icon:'🌉', loc:{lat:47.5022,lng:19.0455,name:'Shoes on the Danube'}, rating:4.7, reviews:48000, transports:[{mode:'walk',mins:18,note:'recomendado'},{mode:'bolt',mins:8},{mode:'metro',mins:12,note:'M2 · Kossuth tér'}] },
+      { time:'opcional', title:'📸 Flatty Coffee Shop ☕', name:'Flatty Coffee Shop', addr:'Sas u. 11, 1051 Budapest (al lado de la Basílica)', desc:'Iced tiramisu latte viral al lado de la Basílica — opción copada antes de la cena de despedida.', img:'https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=80', icon:'📸', optional:true, reel:'DYuCHfHiRvT', loc:{lat:47.5004,lng:19.0521} },
+      { time:'19:30', title:'Cena de despedida · Beestro 14', desc:'Reserva confirmada · 3 personas · 19:30–21:30. Steaks, buen vino y ambiente íntimo para cerrar el viaje perfecto.', img:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80', icon:'🍷', reserved:true, loc:{lat:47.5008,lng:19.0610,name:'Beestro 14'}, ig:'beestro14', rating:4.6, reviews:1800, transports:[{mode:'walk',mins:15,note:'recomendado'},{mode:'bolt',mins:8}] },
     ]
   },
   {
-    id: 'tue', label: 'שלישי', date: '2.6', sub: 'יציאה הביתה',
-    intro: 'בוקר מוקדם — Bolt לשדה התעופה והמראה הביתה. הסוף של חופשה מושלמת.',
-    endBookend: { icon:'🛫', label:'המראה הביתה', sub:'נמל התעופה BUD', time:'09:10',
-      transports:[{mode:'bolt',mins:30,note:'מומלץ'},{mode:'bus',mins:55,note:'100E'}] },
+    id: 'tue', label: 'Martes', date: '2.6', sub: 'Vuelta a casa',
+    intro: 'Mañana temprano — Bolt al aeropuerto y vuelo a casa. El final de unas vacaciones perfectas.',
+    endBookend: { icon:'🛫', label:'Despegue a casa', sub:'Aeropuerto BUD', time:'09:10',
+      transports:[{mode:'bolt',mins:30,note:'recomendado'},{mode:'bus',mins:55,note:'100E'}] },
     skipEndHotel: true,
     center: [47.470, 19.150], zoom: 11,
     activities: []
@@ -300,7 +300,7 @@ function renderTabs() {
       <span>${d.label}</span>
     </button>`).join('') + `
     <a href="#extras" class="shrink-0 px-4 md:px-5 py-2.5 rounded-xl border border-gold-500/30 text-sm md:text-base font-semibold whitespace-nowrap transition text-gold-400 hover:bg-gold-500/10 flex items-center">
-      🎯 בונוסים
+      🎯 Bonus
     </a>`;
   tabsEl.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -315,17 +315,17 @@ function transportConnector(t, list) {
   const items = list && list.length ? list : (t ? [t] : null);
   if (!items) return '';
   const modes = {
-    walk:  { icon:'🚶', label:'הליכה',   color:'text-slate-200', bg:'bg-slate-700/50 border-slate-600/40' },
-    bus:   { icon:'🚌', label:'אוטובוס', color:'text-sky-300',   bg:'bg-sky-500/15 border-sky-500/30' },
-    metro: { icon:'🚇', label:'מטרו',    color:'text-rose-300',  bg:'bg-rose-500/15 border-rose-500/30' },
+    walk:  { icon:'🚶', label:'a pie',   color:'text-slate-200', bg:'bg-slate-700/50 border-slate-600/40' },
+    bus:   { icon:'🚌', label:'Bus', color:'text-sky-300',   bg:'bg-sky-500/15 border-sky-500/30' },
+    metro: { icon:'🚇', label:'Metro',    color:'text-rose-300',  bg:'bg-rose-500/15 border-rose-500/30' },
     bolt:  { icon:'🚕', label:'Bolt',    color:'text-emerald2-400', bg:'bg-emerald2-500/15 border-emerald2-500/30' },
-    stay:  { icon:'📍', label:'נשארים',  color:'text-gold-400',  bg:'bg-gold-500/10 border-gold-500/30' },
-    start: { icon:'🏠', label:'יציאה',   color:'text-gold-400',  bg:'bg-gold-500/10 border-gold-500/30' },
+    stay:  { icon:'📍', label:'Nos quedamos',  color:'text-gold-400',  bg:'bg-gold-500/10 border-gold-500/30' },
+    start: { icon:'🏠', label:'salida',   color:'text-gold-400',  bg:'bg-gold-500/10 border-gold-500/30' },
   };
   const pills = items.map(it => {
     const m = modes[it.mode] || modes.walk;
-    const recommended = it.note && it.note.includes('מומלץ');
-    const mins = it.mins ? `<span class="font-black">${it.mins}׳</span>` : '';
+    const recommended = it.note && it.note.includes('recomendado');
+    const mins = it.mins ? `<span class="font-black">${it.mins}min</span>` : '';
     const note = it.note ? `<span class="text-slate-400 text-[10px]">${it.note}</span>` : '';
     return `
       <span class="inline-flex items-center gap-1 ${m.bg} ${m.color} text-xs font-semibold px-2.5 py-1 rounded-full border ${recommended ? 'ring-2 ring-gold-500/40 shadow-glow' : ''}">
@@ -334,7 +334,7 @@ function transportConnector(t, list) {
   }).join('');
   return `
     <div class="flex items-center gap-2 py-2 ps-4 flex-wrap">
-      <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">איך מגיעים</span>
+      <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Cómo llegar</span>
       ${pills}
       <span class="flex-1 min-w-[20px] h-px bg-gradient-to-l from-white/10 to-transparent"></span>
     </div>`;
@@ -360,8 +360,8 @@ function hotelBookend(role, time) {
   const isStart = role === 'start';
   return bookendCard({
     icon: '🏠',
-    label: isStart ? 'יציאה מהדירה' : 'חזרה לדירה ולישון',
-    sub: isStart ? 'נקודת התחלה · Nyár utca' : 'סוף היום · Nyár utca',
+    label: isStart ? 'Salida del apto' : 'Vuelta al apto a dormir',
+    sub: isStart ? 'Punto de partida · Nyár utca' : 'Fin de jornada · Nyár utca',
     time,
     accent: isStart ? 'border-gold-500/40' : 'border-slate-500/30'
   });
@@ -374,8 +374,8 @@ function hotelActivity(role, opts={}) {
   const isStart = role === 'start';
   return {
     time: opts.time,
-    title: opts.title || (isStart ? '🏠 יציאה מהדירה' : '🏠 חזרה לדירה ולישון'),
-    desc: opts.desc || (isStart ? 'מתחילים את היום מהבסיס ב־Nyár utca, רובע VII.' : 'סוף יום מושלם — חוזרים לדירה לישון.'),
+    title: opts.title || (isStart ? '🏠 Salida del apto' : '🏠 Vuelta al apto a dormir'),
+    desc: opts.desc || (isStart ? 'Arrancamos el día desde la base en Nyár utca, distrito VII.' : 'Cierre de día perfecto — vuelta al apto a dormir.'),
     img: opts.img || HOTEL_IMG,
     icon: '🏠',
     loc: { lat: BASE.lat, lng: BASE.lng, name: BASE.name },
@@ -477,7 +477,7 @@ const SPECIALTIES = {
   'Las Vegas Casino · Sofitel':    { he:['פוקר VIP','נוף לדנובה'],                   es:['Poker VIP','Vista al Danubio'] },
 };
 
-const CURRENT_LANG = 'he'; // overridden in index.es.html
+const CURRENT_LANG = 'es'; // overridden in index.es.html
 
 function getSpecialties(a) {
   const key = a.name || (a.loc && a.loc.name) || a.title || '';
@@ -510,7 +510,7 @@ function ratingPill(a, extraCls='') {
   const q = encodeURIComponent(((a.gmaps) || (a.loc && a.loc.name) || a.name || a.title || '') + ' Budapest');
   const url = `https://www.google.com/maps/search/?api=1&query=${q}`;
   const reviews = a.reviews ? ` <span class="opacity-70">(${a.reviews >= 1000 ? (a.reviews/1000).toFixed(1).replace(/\.0$/,'') + 'K' : a.reviews})</span>` : '';
-  return `<a href="${url}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-md bg-yellow-400/15 text-yellow-300 border border-yellow-400/30 hover:bg-yellow-400/25 transition ${extraCls}" title="ב־Google Maps">⭐ ${a.rating.toFixed(1)}${reviews}</a>`;
+  return `<a href="${url}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-md bg-yellow-400/15 text-yellow-300 border border-yellow-400/30 hover:bg-yellow-400/25 transition ${extraCls}" title="en Google Maps">⭐ ${a.rating.toFixed(1)}${reviews}</a>`;
 }
 
 function venueLinks(a) {
@@ -526,14 +526,14 @@ function venueLinks(a) {
     || (a.loc && a.loc.name ? a.loc.name : null)
     || (a.addr ? a.addr : null);
   if (mapsQuery) {
-    btns.push(`<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery + ' Budapest')}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-md bg-slate-700/60 hover:bg-slate-600/60 text-slate-200 transition">🗺️ מפות</a>`);
+    btns.push(`<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery + ' Budapest')}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-md bg-slate-700/60 hover:bg-slate-600/60 text-slate-200 transition">🗺️ Mapas</a>`);
   }
   if (a.ig) {
     btns.push(`<a href="https://www.instagram.com/${a.ig}/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-md bg-pink-500/20 hover:bg-pink-500/30 text-pink-300 border border-pink-500/30 transition">📸 @${a.ig}</a>`);
   }
   if (a.web) {
     const isAirbnb = /airbnb\./i.test(a.web);
-    const label = isAirbnb ? '🏡 Airbnb' : '🌐 אתר';
+    const label = isAirbnb ? '🏡 Airbnb' : '🌐 Sitio';
     const cls = isAirbnb
       ? 'bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border-rose-500/30'
       : 'bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border-sky-500/30';
@@ -545,19 +545,19 @@ function venueLinks(a) {
 function activityCard(a, idx) {
   const reservedBadge = a.reserved ? `
     <span class="absolute -top-2 -start-2 grad-em text-ink-950 text-xs font-black px-3 py-1 rounded-full shadow-glowG">
-      ✓ מוזמן
+      ✓ Reservado
     </span>` : '';
   const optionalBadge = a.optional ? `
-    <span class="absolute top-3 start-3 bg-slate-700/80 text-slate-200 text-[11px] font-bold px-2 py-0.5 rounded-full">אופציונלי</span>` : '';
+    <span class="absolute top-3 start-3 bg-slate-700/80 text-slate-200 text-[11px] font-bold px-2 py-0.5 rounded-full">Opcional</span>` : '';
   const highlightBadge = a.highlight ? `
-    <span class="absolute top-3 start-3 grad-gold text-ink-950 text-[11px] font-black px-2 py-0.5 rounded-full">⭐ אירוע השיא</span>` : '';
+    <span class="absolute top-3 start-3 grad-gold text-ink-950 text-[11px] font-black px-2 py-0.5 rounded-full">⭐ Highlight</span>` : '';
   const igBadge = a.igMust ? `
     <span class="absolute top-3 end-3 bg-gradient-to-br from-pink-500 to-fuchsia-600 text-white text-[11px] font-black px-2 py-0.5 rounded-full shadow-lg">🔥 MUST · IG</span>`
     : (a.reel ? `<span class="absolute top-3 end-3 bg-pink-500/80 text-white text-[11px] font-black px-2 py-0.5 rounded-full">📸 IG</span>` : '');
   const alt = a.alt ? `
     <details class="mt-3 group">
       <summary class="flex items-center justify-between gap-2 text-sm text-gold-400 hover:text-gold-500 font-semibold py-2 px-3 rounded-lg bg-gold-500/5 border border-gold-500/20">
-        <span class="flex items-center gap-2">🔄 אפשרויות חלופיות בסביבה</span>
+        <span class="flex items-center gap-2">🔄 Opciones alternativas cerca</span>
         <svg class="chev w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.24 4.38a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"/></svg>
       </summary>
       <div class="mt-2 p-3 rounded-lg bg-ink-800/60 border border-white/5 text-sm text-slate-300">
@@ -590,7 +590,7 @@ function activityCard(a, idx) {
             <div class="relative" style="padding-top:125%;">
               <iframe src="https://www.instagram.com/reel/${a.reel}/embed" class="absolute inset-0 w-full h-full" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
             </div>
-            <a href="https://www.instagram.com/reel/${a.reel}/" target="_blank" rel="noopener" class="block text-center py-2 text-xs font-bold bg-pink-500/20 text-pink-300 hover:bg-pink-500/30 transition">📸 פתח באינסטגרם ↗</a>
+            <a href="https://www.instagram.com/reel/${a.reel}/" target="_blank" rel="noopener" class="block text-center py-2 text-xs font-bold bg-pink-500/20 text-pink-300 hover:bg-pink-500/30 transition">📸 Abrir en Instagram ↗</a>
           </div>` : ''}
         ${venueLinks(a)}
         ${alt}
@@ -608,7 +608,7 @@ function renderDay() {
       <div class="flex items-start justify-between gap-3 flex-wrap">
         <div class="flex-1 min-w-0">
           <div class="flex items-baseline gap-3 flex-wrap">
-            <h2 class="text-3xl md:text-4xl font-black">יום ${day.label}</h2>
+            <h2 class="text-3xl md:text-4xl font-black">${day.label} ${day.date}</h2>
             <span class="text-gold-400 font-bold">${day.date}</span>
           </div>
           <p class="text-slate-400 mt-1 font-semibold">${day.sub}</p>
@@ -616,7 +616,7 @@ function renderDay() {
         </div>
         <a id="dayGmapsBtn" href="#" target="_blank" rel="noopener"
            class="inline-flex items-center gap-2 px-4 py-2 rounded-xl grad-gold text-ink-950 font-bold text-sm hover:opacity-90 transition shrink-0">
-          🗺️ פתח את היום במפות גוגל
+          🗺️ Abrir el día en Google Maps
         </a>
       </div>
     </div>`;
@@ -627,7 +627,7 @@ function renderDay() {
     startActs.push(airportActivity({
       time: day.startBookend.time,
       title: day.startBookend.title || day.startBookend.label,
-      desc: day.startBookend.desc || day.startBookend.sub || 'התחלת היום בבודפשט.',
+      desc: day.startBookend.desc || day.startBookend.sub || 'Empieza el día en Budapest.',
       icon: day.startBookend.icon || '✈️',
     }));
   } else {
@@ -637,8 +637,8 @@ function renderDay() {
     const cfg = typeof day.afterStartHotel === 'object' ? day.afterStartHotel : {};
     startActs.push(hotelActivity('start', {
       time: cfg.time,
-      title: '🏠 ' + (cfg.label || 'הגעה לדירה'),
-      desc: cfg.desc || 'הנחת מזוודות, מנוחה קצרה ויציאה להמשך היום.',
+      title: '🏠 ' + (cfg.label || 'Llegada al apto'),
+      desc: cfg.desc || 'Dejamos las valijas, descanso breve y salimos a seguir el día.',
       transports: cfg.transports,
     }));
   }
@@ -649,7 +649,7 @@ function renderDay() {
     endActs.push(airportActivity({
       time: day.endBookend.time,
       title: day.endBookend.title || day.endBookend.label,
-      desc: day.endBookend.desc || day.endBookend.sub || 'סיום החופשה.',
+      desc: day.endBookend.desc || day.endBookend.sub || 'Fin del viaje.',
       icon: day.endBookend.icon || '🛫',
       transports: day.endBookend.transports,
     }));
@@ -665,25 +665,25 @@ function renderDay() {
         <div class="flex items-start gap-3 mb-4">
           <div class="text-3xl">🤔</div>
           <div>
-            <h3 class="text-xl font-extrabold">רוצים להירגע או להמשיך לטייל?</h3>
-            <p class="text-slate-400 text-sm mt-1">בחרו את אחר הצהריים שלכם — אפשר להחליף מתי שתרצו.</p>
+            <h3 class="text-xl font-extrabold">¿Querés relajarte o seguir paseando?</h3>
+            <p class="text-slate-400 text-sm mt-1">Elegí tu tarde — podés cambiar cuando quieras.</p>
           </div>
         </div>
         <div class="grid sm:grid-cols-2 gap-3">
           <button data-path="A" class="path-btn p-4 rounded-xl border text-start transition ${sundayPath==='A' ? 'tab-active border-gold-500/60' : 'border-white/10 hover:border-gold-500/30 text-slate-300'}">
             <div class="text-2xl mb-1">🏰</div>
-            <div class="font-bold">המשך טיול</div>
-            <div class="text-xs text-slate-400 mt-1">ארמון בודה ומצודת הדייגים</div>
+            <div class="font-bold">Seguir paseando</div>
+            <div class="text-xs text-slate-400 mt-1">Castillo de Buda y Bastión de los Pescadores</div>
           </button>
           <button data-path="B" class="path-btn p-4 rounded-xl border text-start transition ${sundayPath==='B' ? 'tab-active border-gold-500/60' : 'border-white/10 hover:border-gold-500/30 text-slate-300'}">
             <div class="text-2xl mb-1">♨️</div>
-            <div class="font-bold">רוגע במרחצאות</div>
+            <div class="font-bold">Relax en los baños termales</div>
             <div class="text-xs text-slate-400 mt-1">Széchenyi Thermal Baths</div>
           </button>
         </div>
       </div>`;
     const pathData = day.paths[sundayPath];
-    html += `<div class="mb-3 text-sm font-bold text-emerald2-400">${pathData.icon} נבחר: ${pathData.label}</div>`;
+    html += `<div class="mb-3 text-sm font-bold text-emerald2-400">${pathData.icon} elegido: ${pathData.label}</div>`;
     html += renderActivityList(pathData.items);
     // remainder
     html += renderActivityList(day.activities.slice(1));
@@ -766,7 +766,7 @@ function renderMap() {
   });
   L.marker([BASE.lat, BASE.lng], { icon: hotelIcon, zIndexOffset: 1000 })
     .addTo(markersLayer)
-    .bindPopup(`<div style="min-width:180px"><b>1. 🏠 ${BASE.name}</b><br/><span style="color:#f5c451">נקודת התחלה</span><br/><span style="color:#94a3b8;font-size:12px">Nyár utca, רובע VII</span><br/><a href="${BASE.web}" target="_blank" rel="noopener" style="display:inline-block;margin-top:6px;color:#f87171;font-weight:700;font-size:12px;text-decoration:none">🏡 פתח ב־Airbnb ↗</a></div>`);
+    .bindPopup(`<div style="min-width:180px"><b>1. 🏠 ${BASE.name}</b><br/><span style="color:#f5c451">Punto de partida</span><br/><span style="color:#94a3b8;font-size:12px">Nyár utca, distrito VII</span><br/><a href="${BASE.web}" target="_blank" rel="noopener" style="display:inline-block;margin-top:6px;color:#f87171;font-weight:700;font-size:12px;text-decoration:none">🏡 Abrir en Airbnb ↗</a></div>`);
   hotelMarker = markersLayer.getLayers()[markersLayer.getLayers().length - 1];
 
   const latlngs = [[BASE.lat, BASE.lng]];
@@ -780,7 +780,7 @@ function renderMap() {
     });
     const m = L.marker([l.lat, l.lng], { icon })
       .addTo(markersLayer)
-      .bindPopup(`<div style="min-width:160px"><b>${num}. ${l.title}</b><br/><span style="color:#f5c451">${l.time}</span><br/><span style="color:#94a3b8;font-size:12px">${l.name}</span>${l.reserved?'<br/><span style="color:#34d399;font-weight:bold">✓ מוזמן</span>':''}</div>`);
+      .bindPopup(`<div style="min-width:160px"><b>${num}. ${l.title}</b><br/><span style="color:#f5c451">${l.time}</span><br/><span style="color:#94a3b8;font-size:12px">${l.name}</span>${l.reserved?'<br/><span style="color:#34d399;font-weight:bold">✓ Reservado</span>':''}</div>`);
     stopMarkers.push(m);
     latlngs.push([l.lat, l.lng]);
   });
@@ -837,50 +837,50 @@ function renderMap() {
 ============================================ */
 const EXTRAS = [
   {
-    id:'burgers', title:'🍔 המבורגרים מומלצים', accent:'gold',
-    desc:'שלוש האופציות המנצחות לקרבורציה זריזה ועסיסית ברובע היהודי.',
+    id:'burgers', title:'🍔 Hamburguesas recomendadas', accent:'gold',
+    desc:'Las mejores opciones para una hamburguesa rápida y jugosa en el barrio judío.',
     items:[
       {
-        name:'Bamba Marha Burger Bar', sub:'סניף Deák Ferenc tér',
-        desc:'רשת מקומית מובילה — Smash Burger נצרב חזק עם רטבים יצירתיים (מיונז כמהין, ריבת בצל).',
-        addr:'Deák Ferenc tér 3, 1052', hours:'שישי–שני: 11:30–23:00',
+        name:'Bamba Marha Burger Bar', sub:'Sucursal Deák Ferenc tér',
+        desc:'Cadena local líder — smash burger bien sellada con salsas creativas (mayo de trufa, mermelada de cebolla).',
+        addr:'Deák Ferenc tér 3, 1052', hours:'Vie–Lun: 11:30–23:00',
         img:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80',
         loc:{lat:47.4979,lng:19.0547}, tag:'Smash Burger', price:'₪₪', rating:4.5, reviews:3800,
         ig:'bambamarha', web:'https://bambamarha.hu'
       },
       {
-        name:'Zing Burger & Co.', sub:'סניף Király u. 20',
-        desc:'בקר מקומי איכותי, לחמניות נאפות במקום, צ׳יפס בטטה מצוין. נסו את Guitar Hero או Chili.',
-        addr:'Király u. 20, 1061', hours:'שישי–שבת: 11:30–04:00 · ראשון–שני: 11:30–23:00',
+        name:'Zing Burger & Co.', sub:'Sucursal Király u. 20',
+        desc:'Carne local de calidad, panes horneados en el local, papas batata excelentes. Probá la Guitar Hero o la Chili.',
+        addr:'Király u. 20, 1061', hours:'Vie–Sáb: 11:30–04:00 · Dom–Lun: 11:30–23:00',
         img:'https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4990,lng:19.0640}, tag:'פתוח עד מאוחר', price:'₪', rating:4.5, reviews:2900,
+        loc:{lat:47.4990,lng:19.0640}, tag:'Abre hasta tarde', price:'₪', rating:4.5, reviews:2900,
         ig:'zingburger', web:'https://zingburger.hu'
       },
       {
-        name:'Street Food Karavan', sub:'מתחם דוכנים ליד Szimpla',
-        desc:'חצר אוכל רחוב — דוכני המבורגרים, גבינות מקומיות, אפשרות לכל אחד להזמין משהו אחר ולשבת יחד.',
-        addr:'Kazinczy u. 18, 1075', hours:'שישי–ראשון: 11:30–00:00 · שני: 11:30–23:00',
+        name:'Street Food Karavan', sub:'Puestos al lado de Szimpla',
+        desc:'Patio de street food — puestos de burgers, quesos locales, cada uno pide algo distinto y comemos juntos.',
+        addr:'Kazinczy u. 18, 1075', hours:'Vie–Dom: 11:30–00:00 · Lun: 11:30–23:00',
         img:'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80',
         loc:{lat:47.4974,lng:19.0625}, tag:'Street Food', price:'₪', rating:4.4, reviews:12000
       },
       {
-        name:'Retro Lángos Budapest', sub:'הלנגוש המיתולוגי',
-        desc:'הלנגוש (Lángos) ההונגרי הקלאסי — בצק מטוגן ענק עם שמנת חמוצה, גבינה ושום. חוויה לוקאלית חובה, סטיק ופאסט.',
-        addr:'Bajcsy-Zsilinszky út 23, 1065', hours:'יומי 10:00–22:00',
+        name:'Retro Lángos Budapest', sub:'El lángos mítico',
+        desc:'El lángos húngaro clásico — masa frita gigante con crema agria, queso y ajo. Experiencia local obligada, simple y directa.',
+        addr:'Bajcsy-Zsilinszky út 23, 1065', hours:'Todos los días 10:00–22:00',
         img:'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=900&q=80',
         loc:{lat:47.5010,lng:19.0540}, tag:'Lángos', price:'₪', rating:4.5, reviews:6800
       },
       {
-        name:"McDonald's Nyugati tér", sub:'המקדונלדס הכי יפה בעולם',
-        desc:'אטרקציה בפני עצמה — סניף בתוך אולם רכבת ניאו־בארוקי משופץ. מלכודת תיירים? אולי. שווה תמונה? בהחלט.',
+        name:"McDonald's Nyugati tér", sub:'El McDonald\'s más lindo del mundo',
+        desc:'Atracción en sí misma — sucursal dentro de la sala neobarroca de la estación de trenes. ¿Trampa para turistas? Quizá. ¿Vale la foto? Sí.',
         addr:'Teréz krt. 55, 1062', hours:'24/7',
         img:'https://images.unsplash.com/photo-1606937295547-bc0f668d2c66?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.5104,lng:19.0577}, tag:'אטרקציה', price:'₪', rating:4.2, reviews:9500
+        loc:{lat:47.5104,lng:19.0577}, tag:'Atracción', price:'₪', rating:4.2, reviews:9500
       },
       {
-        name:'Smash Lángos', sub:'לנגוש מודרני וקראנצ׳י',
-        desc:'גישה חדשה ללנגוש — דק וקראנצ׳י יותר, עם טופינגים יצירתיים. אופציה מצוינת אם רוצים לטעום קלאסיקה הונגרית בטוויסט.',
-        addr:'Király u. 32, 1077', hours:'יומי 11:00–22:00',
+        name:'Smash Lángos', sub:'Lángos moderno y crujiente',
+        desc:'Nuevo enfoque del lángos — más fino y crujiente, con toppings creativos. Excelente opción para probar el clásico con un giro.',
+        addr:'Király u. 32, 1077', hours:'Todos los días 11:00–22:00',
         img:'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=900&q=80',
         loc:{lat:47.4987,lng:19.0615}, tag:'Lángos', price:'₪', rating:4.6, reviews:1100,
         ig:'smashlangos'
@@ -888,140 +888,140 @@ const EXTRAS = [
     ]
   },
   {
-    id:'bakeries', title:'🥐 ארוחות בוקר וקינוחים', accent:'gold',
-    desc:'מאפים, קרואסונים והקינוח הכי מיוחד של בודפשט.',
+    id:'bakeries', title:'🥐 Desayunos y postres', accent:'gold',
+    desc:'Bollería, croissants y los postres más especiales de Budapest.',
     items:[
       {
-        name:'SALT Bakery × CAUSE', sub:'בייקרי של מסעדת מישלן',
-        desc:'בית הקפה של מסעדת SALT עטורת המישלן — קרואסונים ברמה של פריז, לחמי מחמצת, רוגעלך, פוגאצ׳ה וקרואסון שקדים מטריפים. סטייל אירופאי אמיתי לפתיחת היום. ✨ לא כשר.',
-        addr:'Zrínyi u. 9, 1051', hours:'יומי 09:00–19:00',
+        name:'SALT Bakery × CAUSE', sub:'Panadería del restaurante con estrella Michelin',
+        desc:'El café del restaurante SALT (Michelin) — croissants nivel París, panes de masa madre, rugelach, pogácsa y croissants de almendra increíbles. Estilo europeo real para empezar el día. ✨ No kosher.',
+        addr:'Zrínyi u. 9, 1051', hours:'Todos los días 09:00–19:00',
         img:'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4994,lng:19.0506}, tag:'⭐ מישלן', price:'1000–3000 HUF', rating:4.7, reviews:1300,
+        loc:{lat:47.4994,lng:19.0506}, tag:'⭐ Michelin', price:'1000–3000 HUF', rating:4.7, reviews:1300,
         ig:'saltbudapest', web:'https://shop.saltbudapest.com'
       },
       {
-        name:'Frőhlich Cukrászda', sub:'הפלודני האגדי',
-        desc:'קינוח חובה בבודפשט: פלודני — קינוח הונגרי־יהודי קלאסי עם 4 שכבות (פרג, אגוזי מלך, תפוחים, ריבת שזיפים). עשיר, אייקוני, חוויה של ביס.',
-        addr:'Dob u. 22, 1074', hours:'א׳–ה׳ 09:00–19:00 · ו׳ עד הצהריים',
+        name:'Frőhlich Cukrászda', sub:'El flódni mítico',
+        desc:'Postre obligado en Budapest: flódni — torta húngaro-judía clásica con 4 capas (amapola, nuez, manzana, dulce de ciruela). Rica, icónica, experiencia en cada bocado.',
+        addr:'Dob u. 22, 1074', hours:'Dom–Jue 09:00–19:00 · Vie hasta el mediodía',
         img:'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4970,lng:19.0581}, tag:'🍰 פלודני', price:'₪', rating:4.5, reviews:1600
+        loc:{lat:47.4970,lng:19.0581}, tag:'🍰 Flódni', price:'₪', rating:4.5, reviews:1600
       },
       {
-        name:'Cirkusz Café', sub:'הבראנץ׳ הטרנדי',
-        desc:'בית הקפה הכי טרנדי בעיר — חביתות, פנקייקים וקפה ברמה גבוהה. תור בסופי שבוע.',
-        addr:'Dob u. 25, 1074', hours:'יומי 09:00–16:00',
+        name:'Cirkusz Café', sub:'El brunch trendy',
+        desc:'El café más trendy de la ciudad — tortillas, pancakes y café de alto nivel. Cola los fines de semana.',
+        addr:'Dob u. 25, 1074', hours:'Todos los días 09:00–16:00',
         img:'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4992,lng:19.0610}, tag:'בראנץ׳', price:'₪₪', rating:4.5, reviews:5100,
+        loc:{lat:47.4992,lng:19.0610}, tag:'Brunch', price:'₪₪', rating:4.5, reviews:5100,
         ig:'cirkuszcafe'
       },
       {
-        name:'Cookie Beacon Brunch', sub:'בראנץ׳ מתוק ושייקים',
-        desc:'מקום בראנץ׳ צבעוני עם פנקייקים, וופלים וקוקיז ענקיים. מעולה לתמונות ולשבת איתן באוויר הפתוח.',
-        addr:'Wesselényi u. 18, 1077', hours:'יומי 09:00–18:00',
+        name:'Cookie Beacon Brunch', sub:'Brunch dulce y shakes',
+        desc:'Lugar de brunch colorido con pancakes, waffles y cookies gigantes. Excelente para fotos y para sentarse al aire libre.',
+        addr:'Wesselényi u. 18, 1077', hours:'Todos los días 09:00–18:00',
         img:'https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4982,lng:19.0617}, tag:'בראנץ׳', price:'₪₪', rating:4.6, reviews:1800,
+        loc:{lat:47.4982,lng:19.0617}, tag:'Brunch', price:'₪₪', rating:4.6, reviews:1800,
         ig:'cookiebeaconbudapest'
       },
       {
-        name:'Aleli Budapest', sub:'בראנץ׳ ים־תיכוני',
-        desc:'בראנץ׳ מודרני עם וייב ים־תיכוני — שקשוקה, אבוקדו טוסט וקפה מצוין. אווירה רגועה ומעוצבת.',
-        addr:'Dob u. 38, 1074', hours:'יומי 09:00–17:00',
+        name:'Aleli Budapest', sub:'Brunch mediterráneo',
+        desc:'Brunch moderno con onda mediterránea — shakshuka, tostada de palta y café excelente. Ambiente tranquilo y bien diseñado.',
+        addr:'Dob u. 38, 1074', hours:'Todos los días 09:00–17:00',
         img:'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4984,lng:19.0625}, tag:'בראנץ׳', price:'₪₪', rating:4.7, reviews:1200,
+        loc:{lat:47.4984,lng:19.0625}, tag:'Brunch', price:'₪₪', rating:4.7, reviews:1200,
         ig:'aleli.budapest'
       },
       {
-        name:'Pampushka', sub:'בייקרי אוקראיני',
-        desc:'בייקרי אוקראיני־ייחודי — פמפושקי (לחמניות שום אוקראיניות), בורקאסים מתוקים, מאפים יצירתיים. מקום קטן ומלא טעם.',
-        addr:'Király u. 33, 1077', hours:'ב׳–ש׳ 08:00–18:00',
+        name:'Pampushka', sub:'Panadería ucraniana',
+        desc:'Panadería ucraniana única — pampushki (panecillos de ajo), borek dulces, bollería creativa. Lugar chico y lleno de sabor.',
+        addr:'Király u. 33, 1077', hours:'Lun–Sáb 08:00–18:00',
         img:'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4988,lng:19.0617}, tag:'אוקראיני', price:'₪', rating:4.8, reviews:680,
+        loc:{lat:47.4988,lng:19.0617}, tag:'Ucraniano', price:'₪', rating:4.8, reviews:680,
         ig:'pampushka.budapest'
       },
       {
-        name:'Artizán Bakery', sub:'מחמצת אומנותית',
-        desc:'בייקרי בוטיק מהמובילים בעיר — לחמי מחמצת, קרואסונים מבצק חמאה אמיתי, סנדוויצ׳ים פתוחים. גישה מקצועית לבישול לחם.',
-        addr:'Hold u. 3, 1054', hours:'ב׳–ו׳ 07:30–18:00 · ש׳ 08:00–14:00',
+        name:'Artizán Bakery', sub:'Masa madre artesanal',
+        desc:'Panadería boutique top de la ciudad — panes de masa madre, croissants con masa de manteca real, sándwiches abiertos. Enfoque profesional del pan.',
+        addr:'Hold u. 3, 1054', hours:'Lun–Vie 07:30–18:00 · Sáb 08:00–14:00',
         img:'https://images.unsplash.com/photo-1568254183919-78a4f43a2877?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.5018,lng:19.0518}, tag:'מחמצת', price:'₪₪', rating:4.6, reviews:1900,
+        loc:{lat:47.5018,lng:19.0518}, tag:'Masa madre', price:'₪₪', rating:4.6, reviews:1900,
         ig:'artizanbakery', web:'https://artizan.hu'
       },
       {
-        name:'VAJ', sub:'הקרואסון הוויראלי',
-        desc:'בייקרי בוטיק שהשתלט על האינסטגרם — קרואסונים מושלמים במגוון מילויים (פיסטוק, שוקולד, אגוז). שווה לעמוד בתור.',
-        addr:'Hercegprímás u. 18, 1051', hours:'ג׳–א׳ 09:00–18:00',
+        name:'VAJ', sub:'El croissant viral',
+        desc:'Panadería boutique que reinó en Instagram — croissants perfectos con varios rellenos (pistacho, chocolate, nuez). Vale la cola.',
+        addr:'Hercegprímás u. 18, 1051', hours:'Mar–Dom 09:00–18:00',
         img:'https://images.unsplash.com/photo-1623334044303-241021148842?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.5022,lng:19.0521}, tag:'🥐 ויראלי', price:'₪₪', rating:4.8, reviews:1100,
+        loc:{lat:47.5022,lng:19.0521}, tag:'🥐 Viral', price:'₪₪', rating:4.8, reviews:1100,
         ig:'vaj.budapest'
       },
       {
-        name:'Lui Coffee', sub:'קפה ספיישלטי + מאפים',
-        desc:'בית קפה ספיישלטי קטנטן עם קפה מצוין ומאפים ביתיים. נקודה מצוינת לעצירה קצרה בבוקר.',
-        addr:'Sas u. 11, 1051', hours:'ב׳–ו׳ 08:00–17:00 · ש׳ 09:00–15:00',
+        name:'Lui Coffee', sub:'Café de especialidad + bollería',
+        desc:'Cafetería de especialidad chiquita con café excelente y bollería casera. Punto ideal para parar a la mañana.',
+        addr:'Sas u. 11, 1051', hours:'Lun–Vie 08:00–17:00 · Sáb 09:00–15:00',
         img:'https://images.unsplash.com/photo-1442975631115-c4f7b05b8a2c?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.5005,lng:19.0521}, tag:'☕ קפה', price:'₪₪', rating:4.7, reviews:520,
+        loc:{lat:47.5005,lng:19.0521}, tag:'☕ Café', price:'₪₪', rating:4.7, reviews:520,
         ig:'lui.coffee'
       },
       {
-        name:'Bageri', sub:'בייגלה סקנדינבי',
-        desc:'בייגלה בסגנון סקנדינבי / ניו־יורקי — סנדוויצ׳ים מלאים, סלמון, גבינת שמנת ועוד. בריא, טרי ומשביע.',
-        addr:'Király u. 6, 1075', hours:'יומי 08:00–18:00',
+        name:'Bageri', sub:'Bagels escandinavos',
+        desc:'Bagels estilo escandinavo/neoyorquino — sándwiches rellenos, salmón, cream cheese y más. Sano, fresco y saciante.',
+        addr:'Király u. 6, 1075', hours:'Todos los días 08:00–18:00',
         img:'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4977,lng:19.0588}, tag:'🥯 בייגלה', price:'₪₪', rating:4.6, reviews:780,
+        loc:{lat:47.4977,lng:19.0588}, tag:'🥯 Bagel', price:'₪₪', rating:4.6, reviews:780,
         ig:'bageri.budapest'
       },
       {
-        name:'Flatty', sub:'פוקאצ׳ה ופיצות מרובעות',
-        desc:'פוקאצ׳ות איטלקיות, פיצה ברומאנה ופאני אומנותיים — מעולה לארוחת צהריים מהירה ומשביעה.',
-        addr:'Hajós u. 23, 1065', hours:'ב׳–ו׳ 09:00–19:00 · ש׳ 10:00–17:00',
+        name:'Flatty', sub:'Focaccia y pizzas cuadradas',
+        desc:'Focaccias italianas, pizza alla romana y panini artesanales — excelente para almuerzo rápido y saciante.',
+        addr:'Hajós u. 23, 1065', hours:'Lun–Vie 09:00–19:00 · Sáb 10:00–17:00',
         img:'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.5039,lng:19.0556}, tag:'🍕 פוקאצ׳ה', price:'₪₪', rating:4.7, reviews:640,
+        loc:{lat:47.5039,lng:19.0556}, tag:'🍕 Focaccia', price:'₪₪', rating:4.7, reviews:640,
         ig:'flatty.budapest'
       },
       {
-        name:'Áran Bakery', sub:'אומנות לחם אירופי',
-        desc:'בייקרי בוטיק עם לחמי מחמצת מצוינים, מאפים חמאתיים וקפה. אווירה מינימליסטית, איכות גבוהה.',
-        addr:'Falk Miksa u. 30, 1055', hours:'ג׳–ש׳ 08:00–18:00',
+        name:'Áran Bakery', sub:'Arte del pan europeo',
+        desc:'Panadería boutique con panes de masa madre excelentes, bollería de manteca y café. Ambiente minimalista, calidad alta.',
+        addr:'Falk Miksa u. 30, 1055', hours:'Mar–Sáb 08:00–18:00',
         img:'https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.5093,lng:19.0498}, tag:'בייקרי', price:'₪₪', rating:4.7, reviews:890,
+        loc:{lat:47.5093,lng:19.0498}, tag:'Bakery', price:'₪₪', rating:4.7, reviews:890,
         ig:'aranbakery'
       },
       {
-        name:'Freyja', sub:'קונדיטוריה סקנדינבית',
-        desc:'קונדיטוריה ובית קפה בהשראה סקנדינבית — קינוחים אסתטיים, קרואסונים יצירתיים וקפה איכותי.',
-        addr:'Dohány u. 84, 1074', hours:'ג׳–א׳ 09:00–19:00',
+        name:'Freyja', sub:'Pastelería escandinava',
+        desc:'Pastelería y café inspirados en Escandinavia — postres estéticos, croissants creativos y café de calidad.',
+        addr:'Dohány u. 84, 1074', hours:'Mar–Dom 09:00–19:00',
         img:'https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4970,lng:19.0670}, tag:'קונדיטוריה', price:'₪₪', rating:4.8, reviews:560,
+        loc:{lat:47.4970,lng:19.0670}, tag:'Pastelería', price:'₪₪', rating:4.8, reviews:560,
         ig:'freyja.budapest'
       },
       {
-        name:"Molnár's Kürtőskalács", sub:'הצ׳ימני קייק האייקוני',
-        desc:'Kürtőskalács = "Chimney Cake" — בצק שמרים מתפתל סביב גליל, נצרב על גחלים ומתקרמל בסוכר. מנה הונגרית קלאסית, מתוקה ולוהטת.',
-        addr:'Váci u. 31, 1056', hours:'יומי 10:00–22:00',
+        name:"Molnár's Kürtőskalács", sub:'El chimney cake icónico',
+        desc:'Kürtőskalács = "Chimney Cake" — masa con levadura enrollada en un cilindro, dorada al carbón y caramelizada en azúcar. Postre húngaro clásico, dulce y caliente.',
+        addr:'Váci u. 31, 1056', hours:'Todos los días 10:00–22:00',
         img:'https://images.unsplash.com/photo-1601979031925-9d9e84b07b03?auto=format&fit=crop&w=900&q=80',
         loc:{lat:47.4904,lng:19.0566}, tag:'🍯 Chimney', price:'₪', rating:4.5, reviews:3400,
         ig:'molnarskurtoskalacs', web:'https://molnarbeltejei.hu'
       },
       {
-        name:'Kurtissimo', sub:'צ׳ימני קייק מודרני',
-        desc:'גרסה מודרנית של ה־Kürtőskalács — אפשרויות מילוי במקום (גלידה, נוטלה, פירות). מצוין כקינוח אחרי טיול ב־Váci utca.',
-        addr:'Váci u. 36, 1056', hours:'יומי 10:00–22:00',
+        name:'Kurtissimo', sub:'Chimney cake moderno',
+        desc:'Versión moderna del Kürtőskalács — opciones de relleno en el momento (helado, Nutella, frutas). Ideal de postre después de pasear por Váci utca.',
+        addr:'Váci u. 36, 1056', hours:'Todos los días 10:00–22:00',
         img:'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=80',
         loc:{lat:47.4900,lng:19.0568}, tag:'🍦 Chimney', price:'₪', rating:4.5, reviews:1900,
         ig:'kurtissimo'
       },
       {
-        name:'Matcha Island', sub:'המקדש של המאצ׳ה בבודפשט',
-        desc:'בית קפה ייעודי למאצ׳ה — לאטה מאצ׳ה, פנקייקים ירוקים, קינוחים יפניים. עיצוב מינימליסטי ופוטוגני.',
-        addr:'Király u. 19, 1075', hours:'יומי 09:00–19:00',
+        name:'Matcha Island', sub:'El templo del matcha en Budapest',
+        desc:'Cafetería dedicada al matcha — matcha latte, pancakes verdes, postres japoneses. Diseño minimalista y fotogénico.',
+        addr:'Király u. 19, 1075', hours:'Todos los días 09:00–19:00',
         img:'https://images.unsplash.com/photo-1536013455671-2a13c7c80fe1?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4982,lng:19.0612}, tag:'🍵 מאצ׳ה', price:'₪₪', rating:4.7, reviews:830,
+        loc:{lat:47.4982,lng:19.0612}, tag:'🍵 Matcha', price:'₪₪', rating:4.7, reviews:830,
         ig:'matchaisland.budapest'
       },
       {
-        name:'2D Beloved', sub:'בית קפה דו־ממדי',
-        desc:'בית קפה בעיצוב 2D מיוחד שנראה כמו ציור קומיקס — קירות, רהיטים וקפה הכל בשחור־לבן עם קוים. אטרקציה אינסטגרמית.',
-        addr:'Kazinczy u. 7, 1075', hours:'יומי 09:00–20:00',
+        name:'2D Beloved', sub:'Cafetería 2D',
+        desc:'Cafetería con diseño 2D especial que parece un cómic — paredes, muebles y café todo en blanco y negro con líneas. Atracción para Instagram.',
+        addr:'Kazinczy u. 7, 1075', hours:'Todos los días 09:00–20:00',
         img:'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80',
         loc:{lat:47.4972,lng:19.0608}, tag:'📐 2D', price:'₪₪', rating:4.6, reviews:1450,
         ig:'2dbelovedbudapest'
@@ -1029,127 +1029,127 @@ const EXTRAS = [
     ]
   },
   {
-    id:'restaurants', title:'🍽️ מסעדות שווה לבקר', accent:'em',
-    desc:'מסעדות מומלצות לארוחות שווה־לתכנן — אווירה, מנות מיוחדות וחוויה.',
+    id:'restaurants', title:'🍽️ Restaurantes que vale la pena', accent:'em',
+    desc:'Restaurantes recomendados para comidas que vale la pena planear — ambiente, platos especiales y experiencia.',
     items:[
       {
-        name:'Twentysix Budapest', sub:'מסעדה עם גן עירוני אייקוני',
-        desc:'מסעדה ים־תיכונית/מודרנית בתוך חצר פנימית מדהימה — צמחייה, אורות וגן ענק במרכז הרובע היהודי. אווירה רומנטית, מנות מצוינות. הזמנה מראש מומלצת מאוד.',
-        addr:'Király u. 11, 1075', hours:'יומי 12:00–24:00',
+        name:'Twentysix Budapest', sub:'Restaurante con jardín urbano icónico',
+        desc:'Restaurante mediterráneo/moderno dentro de un patio interno espectacular — vegetación, luces y un jardín enorme en el corazón del barrio judío. Ambiente romántico, platos excelentes. Reserva muy recomendada.',
+        addr:'Király u. 11, 1075', hours:'Todos los días 12:00–24:00',
         img:'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4975,lng:19.0606}, tag:'🌿 גן עירוני', price:'₪₪₪', rating:4.6, reviews:4200,
+        loc:{lat:47.4975,lng:19.0606}, tag:'🌿 Jardín urbano', price:'₪₪₪', rating:4.6, reviews:4200,
         ig:'twentysixbudapest', web:'https://twentysixbudapest.com'
       },
       {
-        name:'For Sale Pub', sub:'הפאב המכוסה פתקים',
-        desc:'אטרקציה מיתולוגית — קירות, תקרה ושולחנות מכוסים אלפי פתקים מתיירים מכל העולם. אוכל הונגרי מסורתי (גולאש, שניצל, אווז), אווירה לא ייאמן, חוויה חובה.',
-        addr:'Vámház krt. 2, 1093', hours:'יומי 12:00–23:00',
+        name:'For Sale Pub', sub:'El pub cubierto de notas',
+        desc:'Atracción mítica — paredes, techo y mesas cubiertas de miles de notas de turistas de todo el mundo. Comida húngara tradicional (goulash, schnitzel, pato), ambiente increíble, experiencia obligada.',
+        addr:'Vámház krt. 2, 1093', hours:'Todos los días 12:00–23:00',
         img:'https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4869,lng:19.0596}, tag:'📝 אייקוני', price:'₪₪', rating:4.4, reviews:14000,
+        loc:{lat:47.4869,lng:19.0596}, tag:'📝 Icónico', price:'₪₪', rating:4.4, reviews:14000,
         web:'http://forsalepub.hu'
       },
     ]
   },
   {
-    id:'bars', title:'⚽ ברי ספורט לצפייה במשחקים', accent:'em',
-    desc:'איפה לתפוס משחקי ליגת האלופות עם אווירה, בירה ומסכים גדולים.',
+    id:'bars', title:'⚽ Bares deportivos para ver partidos', accent:'em',
+    desc:'Dónde ver los partidos de Champions con ambiente, cerveza y pantallas grandes.',
     items:[
       {
-        name:'Champs Sport Pub', sub:'אייקוני · רובע VII',
-        desc:'מהמוכרים ביותר בעיר לצפייה במשחקים — המון מסכים ואווירת אוהדים אמיתית. ממוקם ליד בית הכנסת הגדול.',
-        addr:'Dohány u. 20, 1074', hours:'יומי עד מאוחר · פתוח בימי המשחקים',
+        name:'Champs Sport Pub', sub:'Icónico · distrito VII',
+        desc:'De los más conocidos de la ciudad para ver partidos — muchas pantallas y ambiente real de hinchada. Al lado de la sinagoga grande.',
+        addr:'Dohány u. 20, 1074', hours:'Todos los días hasta tarde · abre los días de partido',
         img:'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4960,lng:19.0584}, tag:'אייקוני', price:'₪₪', rating:4.3, reviews:1900,
+        loc:{lat:47.4960,lng:19.0584}, tag:'Icónico', price:'₪₪', rating:4.3, reviews:1900,
         ig:'champssportpub'
       },
       {
-        name:'Score! Sport Bar & Billiard', sub:'15 מסכים · פחות תיירים',
-        desc:'בר ספורט מודרני עם תשתית מצוינת — 15 מסכים, ביליארד, בירות בוטיק. נוטה להיות פחות מוכר לתיירים מ־Champs.',
-        addr:'Dob u. 65, 1074', hours:'יומי עד מאוחר',
+        name:'Score! Sport Bar & Billiard', sub:'15 pantallas · menos turistas',
+        desc:'Bar deportivo moderno con muy buena infraestructura — 15 pantallas, billar, cervezas artesanales. Menos conocido por turistas que el Champs.',
+        addr:'Dob u. 65, 1074', hours:'Todos los días hasta tarde',
         img:'https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4998,lng:19.0635}, tag:'15 מסכים', price:'₪₪', rating:4.6, reviews:450
+        loc:{lat:47.4998,lng:19.0635}, tag:'15 pantallas', price:'₪₪', rating:4.6, reviews:450
       },
       {
-        name:'Ziccer · TrollFoci Sport Pub', sub:'נטו לחובבי כדורגל',
-        desc:'הבר האולטימטיבי לחובבי כדורגל — אווירת אצטדיון פנאטית במובן הטוב. הזמנה מראש מומלצת.',
-        addr:'Ó u. 36, 1066', hours:'בימי משחקים · 📞 +36-1-292-6250',
+        name:'Ziccer · TrollFoci Sport Pub', sub:'Puro hinchas de fútbol',
+        desc:'El bar definitivo para fanáticos del fútbol — ambiente de cancha en el buen sentido. Reservar antes recomendado.',
+        addr:'Ó u. 36, 1066', hours:'En días de partido · 📞 +36-1-292-6250',
         img:'https://images.unsplash.com/photo-1522778034537-20a2486be803?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.5054,lng:19.0598}, tag:'⚽ פנאטי', price:'₪₪', rating:4.7, reviews:520,
+        loc:{lat:47.5054,lng:19.0598}, tag:'⚽ Fanático', price:'₪₪', rating:4.7, reviews:520,
         ig:'ziccersportpub', web:'https://ziccersportpub.hu'
       },
       {
-        name:"Jack Doyle's Irish Pub", sub:'פאב אירי קלאסי',
-        desc:'אווירה אירית קלאסית ליד הנהר. שידורי ספורט קבועים, גינס, ואטמוספרה חמה.',
-        addr:'Pilvax köz 1–3, 1052', hours:'יומי עד מאוחר',
+        name:"Jack Doyle's Irish Pub", sub:'Pub irlandés clásico',
+        desc:'Ambiente irlandés clásico al lado del río. Transmisiones deportivas habituales, Guinness y atmósfera cálida.',
+        addr:'Pilvax köz 1–3, 1052', hours:'Todos los días hasta tarde',
         img:'https://images.unsplash.com/photo-1538488881038-e252a119ace7?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4926,lng:19.0537}, tag:'פאב אירי', price:'₪₪', rating:4.3, reviews:1500
+        loc:{lat:47.4926,lng:19.0537}, tag:'Pub irlandés', price:'₪₪', rating:4.3, reviews:1500
       },
       {
-        name:"Beckett's Irish Bar", sub:'בלב Liszt Ferenc tér',
-        desc:'מוסד אירי ותיק עם חלל פנימי גדול וישיבה בחוץ בכיכר השוקקת. מערכת הזמנות מסודרת באתר.',
-        addr:'Liszt Ferenc tér 11, 1061', hours:'יומי · becketts.hu',
+        name:"Beckett's Irish Bar", sub:'En plena Liszt Ferenc tér',
+        desc:'Institución irlandesa veterana con salón grande y mesas afuera en la plaza animada. Sistema de reservas online en el sitio.',
+        addr:'Liszt Ferenc tér 11, 1061', hours:'Todos los días · becketts.hu',
         img:'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.5045,lng:19.0625}, tag:'בכיכר', price:'₪₪', rating:4.4, reviews:3100,
+        loc:{lat:47.5045,lng:19.0625}, tag:'En la plaza', price:'₪₪', rating:4.4, reviews:3100,
         web:'https://becketts.hu'
       },
       {
-        name:'Caledonia Scottish Pub', sub:'גיבוי מצוין ליד Oktogon',
-        desc:'פאב סקוטי אמיתי, המון מסכים וקהל שמבין עניין. תקשורת מצוינת בפייסבוק/טלפון.',
+        name:'Caledonia Scottish Pub', sub:'Excelente plan B cerca de Oktogon',
+        desc:'Pub escocés de verdad, muchas pantallas y público que sabe. Buena comunicación por Facebook/teléfono.',
         addr:'Mozsár u. 9, 1066', hours:'📞 +36-1-311-7611',
         img:'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.5063,lng:19.0612}, tag:'גיבוי', price:'₪₪', rating:4.5, reviews:780,
+        loc:{lat:47.5063,lng:19.0612}, tag:'Plan B', price:'₪₪', rating:4.5, reviews:780,
         web:'https://caledoniabudapest.com'
       },
       {
-        name:'Pointer Pub & Restaurant', sub:'רשת בריטית · כמה סניפים',
-        desc:'רשת פאבים בריטית עם סניפים ב־Teréz krt וב־Váci utca. יתרון: אם אחד מלא, תמיד יש סניף נוסף.',
+        name:'Pointer Pub & Restaurant', sub:'Cadena británica · varias sucursales',
+        desc:'Cadena de pubs británicos con sucursales en Teréz krt y Váci utca. Ventaja: si uno está lleno siempre hay otro.',
         addr:'Teréz krt / Váci utca', hours:'pointerpub.hu',
         img:'https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.5070,lng:19.0625}, tag:'רשת', price:'₪₪', rating:4.3, reviews:1100,
+        loc:{lat:47.5070,lng:19.0625}, tag:'Cadena', price:'₪₪', rating:4.3, reviews:1100,
         web:'https://pointerpub.hu'
       },
       {
-        name:'Stifler Home', sub:'ענק · ב־Gozsdu Udvar',
-        desc:'ענק עם עשרות מסכים במתחם Gozsdu השוקק. גיבוי מצוין אם הברים הקטנים מלאים.',
+        name:'Stifler Home', sub:'Enorme · en Gozsdu Udvar',
+        desc:'Enorme con decenas de pantallas en el animado Gozsdu Udvar. Excelente plan B si los bares chicos están llenos.',
         addr:'Gozsdu Udvar, District VII', hours:'📞 +36-1-441-2678 · stiflerhome.hu',
         img:'https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4983,lng:19.0598}, tag:'ענק', price:'₪₪', rating:4.2, reviews:2700,
+        loc:{lat:47.4983,lng:19.0598}, tag:'Enorme', price:'₪₪', rating:4.2, reviews:2700,
         web:'https://stiflerhome.hu'
       },
       {
-        name:'Akvárium Klub', sub:'הקרנת ענק · מחוץ לקופסה',
-        desc:'מועדון בכיכר Erzsébet — לעיתים מקרינים משחקים גדולים על מסך ענק במתחם המדרגות בחוץ. שווה לבדוק לקראת הגמר.',
-        addr:'Erzsébet tér 12, 1051', hours:'תלוי באירוע',
+        name:'Akvárium Klub', sub:'Pantalla gigante exterior · fuera de lo común',
+        desc:'Club en Erzsébet tér — a veces proyectan partidos grandes en pantalla gigante en las escalinatas exteriores. Vale chequearlo para la final.',
+        addr:'Erzsébet tér 12, 1051', hours:'Depende del evento',
         img:'https://images.unsplash.com/photo-1545128485-c400ce7b6892?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4987,lng:19.0548}, tag:'מסך ענק', price:'₪₪', rating:4.5, reviews:8400
+        loc:{lat:47.4987,lng:19.0548}, tag:'Pantalla gigante', price:'₪₪', rating:4.5, reviews:8400
       },
     ]
   },
   {
-    id:'casinos', title:'🎰 קזינו', accent:'gold',
-    desc:'שלושת הקזינו המובילים בעיר — כל אחד והאופי שלו.',
+    id:'casinos', title:'🎰 Casinos', accent:'gold',
+    desc:'Los tres casinos top de la ciudad — cada uno con su onda.',
     items:[
       {
-        name:'Tropicana Casino', sub:'ליד המסעדה',
-        desc:'הקלאסי — רולטה, בלאקג׳ק ופוקר במרכז העיר. הליכה קצרה מ־Hot Stone.',
+        name:'Tropicana Casino', sub:'Al lado del restaurante',
+        desc:'El clásico — ruleta, blackjack y poker en el centro. Caminata corta desde Hot Stone.',
         addr:'Vigadó u. 2, 1051', hours:'24/7',
         img:'https://images.unsplash.com/photo-1606167668584-78701c57f13d?auto=format&fit=crop&w=900&q=80',
         loc:{lat:47.4978,lng:19.0530}, tag:'24/7', price:'₪₪₪', rating:4.2, reviews:2100,
         web:'https://www.tropicanabudapest.hu'
       },
       {
-        name:'Las Vegas Casino · Corvin', sub:'מודרני',
-        desc:'מתחם מודרני וגדול עם שולחנות חיים ומכונות. אווירה אנרגטית.',
+        name:'Las Vegas Casino · Corvin', sub:'Moderno',
+        desc:'Complejo moderno y grande con mesas en vivo y tragamonedas. Ambiente con energía.',
         addr:'Futó u. 37–45, 1082', hours:'24/7',
         img:'https://images.unsplash.com/photo-1596731498067-8e57f0dc5e0d?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4865,lng:19.0731}, tag:'מודרני', price:'₪₪₪', rating:4.1, reviews:1500
+        loc:{lat:47.4865,lng:19.0731}, tag:'Moderno', price:'₪₪₪', rating:4.1, reviews:1500
       },
       {
-        name:'Las Vegas Casino · Sofitel', sub:'יוקרתי על הדנובה',
-        desc:'הקזינו היוקרתי בלובי מלון סופיטל עם נוף לפרלמנט וגשר השרשרת.',
+        name:'Las Vegas Casino · Sofitel', sub:'De lujo sobre el Danubio',
+        desc:'El casino de lujo en el lobby del hotel Sofitel con vista al Parlamento y al Puente de las Cadenas.',
         addr:'Széchenyi István tér 2, 1051', hours:'24/7',
         img:'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=900&q=80',
-        loc:{lat:47.4996,lng:19.0473}, tag:'יוקרתי', price:'₪₪₪₪', rating:4.4, reviews:780
+        loc:{lat:47.4996,lng:19.0473}, tag:'De lujo', price:'₪₪₪₪', rating:4.4, reviews:780
       },
     ]
   },
@@ -1160,21 +1160,21 @@ const EXTRAS = [
 ============================================ */
 const IG_RECS = [
   { code:'DVeiZ_miOZ_', must:true,  name:'Fluffy & Me Budapest', ig:'fluffyandme_budapest',
-    title:'Fluffy & Me 🥞', sub:'פנקייק סופלה יפני · MUST',
+    title:'Fluffy & Me 🥞', sub:'Soufflé pancakes japoneses · MUST',
     addr:'Hold u. 15, 1054 Budapest',
-    note:'פנקייקי סופלה מתנפחים ואווריריים בסגנון יפני — אחת ההמלצות הכי חמות של בודפשט.' },
+    note:'Pancakes soufflé esponjosos estilo japonés — una de las recomendaciones más calientes de Budapest.' },
   { code:'DYAgzIMIU3x', must:true,  name:'Dixie Budapest', ig:'dixie_budapest',
-    title:'Dixie Budapest 🍪', sub:'קוקיז אמריקאיים · MUST',
+    title:'Dixie Budapest 🍪', sub:'Cookies americanas · MUST',
     addr:'Király u. 26, 1061 Budapest',
-    note:'עוגיות ענקיות בסגנון ניו־יורקי — Király utca 26, ממש ליד הדירה.' },
+    note:'Cookies gigantes estilo neoyorquino — Király utca 26, al lado del apto.' },
   { code:'DXZeYv8DMvf', must:false, name:'KOZO Cheesecake Budapest', ig:'thekozobudapest',
-    title:'KOZO Cheesecake 🍰', sub:'באסק צ׳יזקייק ללא גלוטן',
+    title:'KOZO Cheesecake 🍰', sub:'Basque cheesecake sin gluten',
     addr:'Budapest (KOZO – Cheesecake & Coffee)',
-    note:'בורנט באסק צ׳יזקייק עם תחתית שרופה ומרקם קרמי — 100% ללא גלוטן.' },
+    note:'Burnt basque cheesecake con base quemada y textura cremosa — 100% sin gluten.' },
   { code:'DYuCHfHiRvT', must:false, name:'Flatty Coffee Shop', ig:'flattycoffeeshop',
-    title:'Flatty Coffee ☕', sub:'אייסד טירמיסו לאטה',
-    addr:'Sas u. 11, 1051 Budapest (ליד הבזיליקה)',
-    note:'בית קפה ליד הבזיליקה עם אייסד טירמיסו לאטה ויראלי. (יש גם בקטגוריית קונדיטוריות).' },
+    title:'Flatty Coffee ☕', sub:'Iced tiramisu latte',
+    addr:'Sas u. 11, 1051 Budapest (al lado de la Basílica)',
+    note:'Cafetería al lado de la Basílica con iced tiramisu latte viral. (También está en la categoría de pastelerías).' },
 ];
 
 function gmapsUrl(items) {
@@ -1209,11 +1209,11 @@ function renderIGRecs() {
         <div class="mt-3 grid grid-cols-2 gap-2">
           <a href="${gmaps}" target="_blank" rel="noopener"
              class="inline-flex items-center justify-center gap-1 text-xs font-bold px-3 py-2 rounded-md bg-emerald2-500/15 hover:bg-emerald2-500/25 text-emerald2-400 border border-emerald2-500/30 transition">
-            🗺️ מפות גוגל
+            🗺️ Google Maps
           </a>
           <a href="https://www.instagram.com/reel/${r.code}/" target="_blank" rel="noopener"
              class="inline-flex items-center justify-center gap-1 text-xs font-bold px-3 py-2 rounded-md bg-pink-500/20 hover:bg-pink-500/30 text-pink-300 border border-pink-500/30 transition">
-            📸 רילס
+            📸 Reel
           </a>
           ${r.ig ? `<a href="https://www.instagram.com/${r.ig}/" target="_blank" rel="noopener"
              class="col-span-2 inline-flex items-center justify-center gap-1 text-xs font-bold px-3 py-2 rounded-md bg-pink-500/10 hover:bg-pink-500/20 text-pink-300/90 border border-pink-500/20 transition">
@@ -1238,16 +1238,16 @@ function renderExtras() {
   document.getElementById('extrasMapsBtns').innerHTML = `
     <a href="${gmapsUrl(all)}" target="_blank" rel="noopener"
        class="inline-flex items-center gap-2 px-4 py-2 rounded-xl grad-gold text-ink-950 font-bold text-sm hover:opacity-90 transition">
-      🗺️ פתיחת כל הבונוסים במפות גוגל
+      🗺️ Abrir todos los bonus en Google Maps
     </a>`;
 
   document.getElementById('extrasContent').innerHTML = EXTRAS.map(sec => {
     const a = accentMap[sec.accent];
     const cards = sec.items.map(it => {
       const igBtn = it.ig ? `<a href="https://www.instagram.com/${it.ig}/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1.5 rounded-md bg-pink-500/20 hover:bg-pink-500/30 text-pink-300 border border-pink-500/30 transition">📸 @${it.ig}</a>` : '';
-      const webBtn = it.web ? `<a href="${it.web}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1.5 rounded-md bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 transition">🌐 אתר</a>` : '';
+      const webBtn = it.web ? `<a href="${it.web}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1.5 rounded-md bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 transition">🌐 Sitio</a>` : '';
       const distBadge = it._distM != null
-        ? `<span class="absolute top-3 end-3 bg-emerald2-500/90 text-ink-950 text-[11px] font-black px-2 py-0.5 rounded-full border border-ink-950/20">📍 ${it._distM < 1000 ? Math.round(it._distM) + 'מ׳' : (it._distM/1000).toFixed(1)+'ק״מ'}</span>`
+        ? `<span class="absolute top-3 end-3 bg-emerald2-500/90 text-ink-950 text-[11px] font-black px-2 py-0.5 rounded-full border border-ink-950/20">📍 ${it._distM < 1000 ? Math.round(it._distM) + 'm' : (it._distM/1000).toFixed(1)+'km'}</span>`
         : `<span class="absolute top-3 end-3 bg-ink-900/80 text-slate-200 text-[11px] font-bold px-2 py-0.5 rounded-full border border-white/10">${it.price}</span>`;
       return `
       <div class="card-hover bg-ink-800/60 rounded-2xl border ${a.ring} overflow-hidden flex flex-col">
@@ -1274,7 +1274,7 @@ function renderExtras() {
           <div class="mt-3 flex flex-wrap gap-1.5">
             <a href="${gmapsSingle(it)}" target="_blank" rel="noopener"
                class="inline-flex items-center gap-1 ${a.btn} border text-xs font-bold px-2.5 py-1.5 rounded-md transition">
-              🗺️ מפות
+              🗺️ Mapas
             </a>
             ${igBtn}
             ${webBtn}
@@ -1292,7 +1292,7 @@ function renderExtras() {
           </div>
           <a href="${gmapsUrl(sec.items)}" target="_blank" rel="noopener"
              class="${a.btn} border text-xs font-bold px-3 py-2 rounded-lg transition">
-            🗺️ כל ${sec.items.length} במפות גוגל
+            🗺️ Toda la categoría en Google Maps
           </a>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">${cards}</div>
@@ -1339,7 +1339,7 @@ function renderUserOnMap() {
   });
   userMarker = L.marker([userLoc.lat, userLoc.lng], { icon: meIcon, zIndexOffset: 2000 })
     .addTo(markersLayer)
-    .bindPopup('<b>📍 המיקום שלך</b>');
+    .bindPopup('<b>📍 Tu ubicación</b>');
   if (userLoc.accuracy) {
     userAccuracy = L.circle([userLoc.lat, userLoc.lng], {
       radius: userLoc.accuracy, color:'#3b82f6', fillColor:'#3b82f6', fillOpacity:.08, weight:1
@@ -1356,16 +1356,16 @@ function setLocStatus(msg, ok=true) {
 }
 
 function requestLocation() {
-  if (!navigator.geolocation) { setLocStatus('הדפדפן לא תומך באיתור מיקום.', false); return; }
-  setLocStatus('🔄 מאתר אותך…');
+  if (!navigator.geolocation) { setLocStatus('El navegador no soporta geolocalización.', false); return; }
+  setLocStatus('🔄 Localizándote…');
   navigator.geolocation.getCurrentPosition(pos => {
     userLoc = { lat: pos.coords.latitude, lng: pos.coords.longitude, accuracy: pos.coords.accuracy };
     annotateExtrasWithDistance();
     renderExtras();
     renderUserOnMap();
     const nearest = EXTRAS.flatMap(s => s.items).filter(i => i._distM != null).sort((a,b)=>a._distM-b._distM)[0];
-    const nearestTxt = nearest ? ` · הקרוב ביותר: ${nearest.name} (${nearest._distM < 1000 ? Math.round(nearest._distM)+'מ׳' : (nearest._distM/1000).toFixed(1)+'ק״מ'})` : '';
-    setLocStatus(`📍 המיקום שלך אותר · המקומות מסודרים לפי קרבה${nearestTxt}`);
+    const nearestTxt = nearest ? ` · más cercano: ${nearest.name} (${nearest._distM < 1000 ? Math.round(nearest._distM)+'m' : (nearest._distM/1000).toFixed(1)+'km'})` : '';
+    setLocStatus(`📍 Tu ubicación detectada · los lugares se ordenan por cercanía${nearestTxt}`);
     if (map) {
       const grp = L.featureGroup([
         L.latLng(userLoc.lat, userLoc.lng),
@@ -1374,7 +1374,7 @@ function requestLocation() {
       map.flyToBounds(grp.getBounds().pad(0.3), { duration: 0.6 });
     }
   }, err => {
-    setLocStatus('שגיאה באיתור המיקום: ' + (err.message || 'הרשאה נדחתה'), false);
+    setLocStatus('Error al localizar: ' + (err.message || 'permiso denegado'), false);
   }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
 }
 
@@ -1441,7 +1441,7 @@ function buildAIPrompt() {
     if (day.intro) lines.push('_' + day.intro.replace(/\s+/g,' ').trim() + '_');
     lines.push('');
     acts.forEach(a => {
-      const time = a.time && a.time !== 'אופציונלי' ? a.time : (a.optional ? 'optional' : '');
+      const time = a.time && a.time !== 'opcional' ? a.time : (a.optional ? 'optional' : '');
       const prefix = (time ? '[' + time + '] ' : '') + (a._path ? '(' + a._path + ') ' : '');
       lines.push('  ' + prefix + fmtVenue(a).replace(/^- /, ''));
     });
